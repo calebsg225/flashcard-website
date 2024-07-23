@@ -8,6 +8,7 @@ interface FlashcardProps {
 
 const Flashcard = ({term, definition, startFlipped = false}: FlashcardProps) => {
   const [flipped, setFlipped] = useState(startFlipped);
+
   return (
     <div className="flashcard flex" onClick={() => setFlipped(!flipped)}>
       {flipped ? definition : term}
