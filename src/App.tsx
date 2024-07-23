@@ -1,8 +1,10 @@
+import Flashcard from "./components/Flashcard";
+
 function App() {
 
   return (
     <>
-      initial
+      <Flashcard term={`git`} definition={`ur mom`} isFlipped={false} />
     </>
   );
 }
