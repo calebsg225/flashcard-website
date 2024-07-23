@@ -1,4 +1,5 @@
 // vars
+@import 'vars';
 
 // util
 @import 'util';
@@ -7,4 +8,6 @@
 @import 'app';
 
 // components
-@import '_flashcard';
+@import 'navbar';
+@import 'studyInterface';
+@import 'flashcard';

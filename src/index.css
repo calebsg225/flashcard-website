@@ -4,9 +4,18 @@
   align-items: center;
 }
 
+body {
+  background-color: rgb(31, 31, 31);
+}
+
+.studyInterface {
+  margin: auto;
+}
+
 .flashcard {
   cursor: pointer;
-  background-color: rgb(202, 202, 202);
+  background-color: rgb(109, 109, 109);
+  color: black;
   width: 400px;
   height: 200px;
   font-size: 3rem;

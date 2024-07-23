@@ -1,6 +1,7 @@
 .flashcard {
   cursor: pointer;
-  background-color: rgb(202, 202, 202);
+  background-color: $card-background-color;
+  color: $card-font-color;
   width: 400px;
   height: 200px;
   font-size: 3rem;
