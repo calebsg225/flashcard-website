@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <Flashcard term={`git`} definition={`ur mom`} isFlipped={false} />
+      <Flashcard term={`git`} definition={`ur mom`} />
     </>
   );
 }
