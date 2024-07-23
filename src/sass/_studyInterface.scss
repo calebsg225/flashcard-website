@@ -1,3 +1,23 @@
-.studyInterface {
+.study-interface-container {
+  max-width: 55rem;
   margin: auto;
+  padding: 2rem;
+  background-color: $study-interface-background-color;
+  flex-direction: column;
+  border-radius: 2rem;
+
+  .card-nav {
+    display: grid;
+    grid-template-columns: 4rem 1fr 4rem;
+    column-gap: 1rem;
+    margin: 1rem;
+    button {
+      cursor: pointer;
+      background-color: $card-nav-button-color;
+      border: none;
+      border-radius: 1rem;
+      font-size: 5rem;
+      line-height: 3.7rem;
+    }
+  }
 }

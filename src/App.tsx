@@ -10,8 +10,8 @@ function App() {
   return (
     <>
       <NavBar />
-      {activeSection === 'study'} && <StudyInterface set={selectedSet}/>
-      {activeSection === 'manage'} && <ManageInterface/>
+      {activeSection === 'study' && <StudyInterface set={selectedSet}/> }
+      {activeSection === 'manage' && <ManageInterface />}
     </>
   );
 }

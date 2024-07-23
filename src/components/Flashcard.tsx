@@ -1,17 +1,15 @@
-import { useState } from "react";
-
 interface FlashcardProps {
   term: string,
   definition: string,
-  startFlipped?: boolean
+  isFlipped: boolean,
+  setIsFlipped: Function
 }
 
-const Flashcard = ({term, definition, startFlipped = false}: FlashcardProps) => {
-  const [flipped, setFlipped] = useState(startFlipped);
+const Flashcard = ({term, definition, isFlipped, setIsFlipped}: FlashcardProps) => {
 
   return (
-    <div className="flashcard flex" onClick={() => setFlipped(!flipped)}>
-      {flipped ? definition : term}
+    <div className={`flashcard flex ${isFlipped ? 'definition' : 'term'}`} onClick={() => setIsFlipped(!isFlipped)}>
+      {isFlipped ? definition : term}
     </div>
   );
 }

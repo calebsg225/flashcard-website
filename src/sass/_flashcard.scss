@@ -2,8 +2,18 @@
   cursor: pointer;
   background-color: $card-background-color;
   color: $card-font-color;
-  width: 400px;
-  height: 200px;
+  width: 40rem;
+  aspect-ratio: 5/3;
+  padding: 1rem;
   font-size: 3rem;
   border-radius: 1rem;
+  text-align: center;
+}
+
+.term {
+  border: solid 4px red;
+}
+
+.definition {
+  border: solid 4px rgb(0, 255, 0);
 }
