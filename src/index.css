@@ -20,10 +20,35 @@ body {
   margin: 0;
 }
 
+nav {
+  height: 5rem;
+  background-color: #3f292b;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 2rem;
+}
+nav button {
+  padding: 0.4rem 1rem;
+  color: #d34f73;
+  cursor: pointer;
+  background-color: hsla(0, 0%, 100%, 0);
+  font-size: 2rem;
+  border: hsla(0, 0%, 100%, 0) solid 2px;
+  transition: color 0.2s, border 0.2s;
+}
+nav button:hover {
+  border-bottom: rgb(99, 99, 99) solid 2px;
+  color: rgb(99, 99, 99);
+}
+nav .active-nav-button {
+  border-bottom: #d34f73 solid 2px;
+}
+
 .study-interface-container {
   max-width: 55rem;
-  margin: auto;
-  padding: 2rem;
+  margin: 2rem auto;
+  padding: 3rem;
   background-color: #3f292b;
   flex-direction: column;
   border-radius: 2rem;

@@ -4,14 +4,17 @@ import { StudyInterface } from "./components/study/StudyInterface";
 import { ManageInterface } from "./components/manage/ManageInterface";
 
 function App() {
+
+  const navItems = ['study', 'manage'];
+
   const [activeSection, setActiveSection] = useState('study');
   const [selectedSet, setSelectedSet] = useState('sampleSet1');
 
   return (
     <>
-      <NavBar />
+      <NavBar navItems={navItems} activeSection={activeSection} setActiveSection={setActiveSection} />
       {activeSection === 'study' && <StudyInterface set={selectedSet}/> }
-      {activeSection === 'manage' && <ManageInterface />}
+      {activeSection === 'manage' && <ManageInterface selectedSet={selectedSet} setSelectedSet={setSelectedSet} />}
     </>
   );
 }
