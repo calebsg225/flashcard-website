@@ -1,20 +1,16 @@
-import { SetData } from "../types/setDataTypes";
+import { SetArray } from "../types/setDataTypes";
 
-const sampleSets: SetData = [
+const sampleSets: SetArray = [
   {
-    title: "sampleSet1",
+    title: "starterSet",
     cards: [
       {
-        term: "box",
-        definition: "container used to carry things"
+        term: "Where can I manage my flashcard sets?",
+        definition: "Click the Manage tab!"
       },
       {
-        term: "what is 1 plus 1?",
-        definition: "2"
-      },
-      {
-        term: "what is the 8th letter of the english alphabet?",
-        definition: "h"
+        term: "How do I edit my flashcards?",
+        definition: "Click the Edit button on the set you want to edit!"
       }
     ],
   },
@@ -45,10 +41,6 @@ const sampleSets: SetData = [
       {
         term: "what is 1 plus 1?",
         definition: "2"
-      },
-      {
-        term: "what is the 8th letter of the english alphabet?",
-        definition: "h"
       }
     ],
   },

@@ -4,17 +4,19 @@ import { SetPreview } from "./SetPreview";
 interface ManageInterfaceProps {
   selectedSet: number;
   setSelectedSet: Function;
+  setActiveSection: Function;
 }
 
-export const ManageInterface = ({selectedSet, setSelectedSet}: ManageInterfaceProps) => {
+export const ManageInterface = ({selectedSet, setSelectedSet, setActiveSection}: ManageInterfaceProps) => {
   return (
     <section className="manage-interface-container">
       {sampleSets.map((set, i) => (
         <SetPreview 
-          setTitle={set.title} 
-          setCards={set.cards} 
-          selectedSet={selectedSet} 
+          setNumber={i}
+          setData={set}
           setSelectedSet={setSelectedSet}
+          setActiveSection={setActiveSection}
+          selectedSet={selectedSet}
           key={i}
         />
       ))}

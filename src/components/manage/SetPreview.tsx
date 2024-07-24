@@ -1,17 +1,27 @@
-import { CardArray } from "../../types/setDataTypes"
+import { SetData } from "../../types/setDataTypes"
 
 interface SetPreviewProps {
-  setTitle: string,
-  setCards: CardArray,
+  setNumber: number,
+  setData: SetData,
   selectedSet: number,
-  setSelectedSet: Function
+  setSelectedSet: Function,
+  setActiveSection: Function
 }
 
-export const SetPreview = ({setTitle, setCards, selectedSet, setSelectedSet}: SetPreviewProps) => {
+export const SetPreview = ({setNumber, setData, selectedSet, setSelectedSet, setActiveSection}: SetPreviewProps) => {
+
+  const handleSelectSet = () => {
+    setSelectedSet(setNumber);
+    setActiveSection('Study');
+  }
+
   return (
-    <div className="set-preview-container">
-      <h2>{setTitle}</h2>
-      <p>card count: {setCards.length}</p>
+    <div 
+      className={`set-preview-container ${selectedSet === setNumber ? 'selected-set-preview' : ''}`}
+      onClick={() => handleSelectSet()}
+    >
+      <h2>{setData.title}</h2>
+      <p>card count: {setData.cards.length}</p>
       <button>edit</button>
     </div>
   )
