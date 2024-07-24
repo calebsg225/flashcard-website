@@ -1,12 +1,22 @@
+import { sampleSets } from "../../data/sample_sets";
+import { SetPreview } from "./SetPreview";
+
 interface ManageInterfaceProps {
-  selectedSet: string;
+  selectedSet: number;
   setSelectedSet: Function;
 }
 
 export const ManageInterface = ({selectedSet, setSelectedSet}: ManageInterfaceProps) => {
   return (
     <section className="manage-interface-container">
-      <button onClick={() => setSelectedSet(selectedSet)}>{selectedSet}</button>
+      {sampleSets.map(set => (
+        <SetPreview 
+          setTitle={set.title} 
+          setCards={set.cards} 
+          selectedSet={selectedSet} 
+          setSelectedSet={setSelectedSet}
+        />
+      ))}
     </section>
   );
 }

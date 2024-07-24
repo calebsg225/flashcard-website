@@ -1,10 +1,11 @@
-type SetData = {
-  [key: string]: {
-    cards: {
-        term: string,
-        definition: string
-      }[]
-  }
-}
+type CardArray = {
+    term: string,
+    definition: string
+  }[]
 
-export type { SetData }
+type SetData = {
+  title: string,
+  cards: CardArray
+}[]
+
+export type { SetData, CardArray }

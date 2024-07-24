@@ -1,0 +1,35 @@
+.manage-interface-container {
+  background-color: blue;
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+
+  .set-preview-container {
+    background-color: red;
+  }
+}
+
+@media (min-width: 700px) {
+  .manage-interface-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .manage-interface-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1400px) {
+  .manage-interface-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1800px) {
+  .manage-interface-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}

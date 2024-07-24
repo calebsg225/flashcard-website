@@ -7,8 +7,8 @@ function App() {
 
   const navItems = ['study', 'manage'];
 
-  const [activeSection, setActiveSection] = useState('study');
-  const [selectedSet, setSelectedSet] = useState('sampleSet1');
+  const [activeSection, setActiveSection] = useState('manage');
+  const [selectedSet, setSelectedSet] = useState(0);
 
   return (
     <>

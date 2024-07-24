@@ -3,7 +3,7 @@ import { sampleSets } from "../../data/sample_sets";
 import Flashcard from "../Flashcard";
 
 interface StudyInterfaceProps {
-  set: string;
+  set: number;
 }
 
 export const StudyInterface = ({set}: StudyInterfaceProps) => {
