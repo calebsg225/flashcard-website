@@ -9,12 +9,13 @@ interface ManageInterfaceProps {
 export const ManageInterface = ({selectedSet, setSelectedSet}: ManageInterfaceProps) => {
   return (
     <section className="manage-interface-container">
-      {sampleSets.map(set => (
+      {sampleSets.map((set, i) => (
         <SetPreview 
           setTitle={set.title} 
           setCards={set.cards} 
           selectedSet={selectedSet} 
           setSelectedSet={setSelectedSet}
+          key={i}
         />
       ))}
     </section>

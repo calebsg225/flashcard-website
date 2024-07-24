@@ -12,10 +12,13 @@ export const NavBar = ({navItems, activeSection, setActiveSection}: NavBarProps)
 
   return (
     <nav>
-      {navItems.map((navItem) => 
+      {navItems.map((navItem, i) => 
         (<button 
           className={activeSection === navItem ? 'active-nav-button' : ''} 
-          onClick={() => {handleSetActiveSection(navItem)}}>{navItem}
+          onClick={() => {handleSetActiveSection(navItem)}}
+          key={i}
+        >
+            {navItem}
         </button>)
       )}
     </nav>
