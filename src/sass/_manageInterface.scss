@@ -7,9 +7,22 @@
 
   .set-preview-container {
     background-color: red;
+
+    .edit-set-container {
+      position: absolute;
+      inset: 0;
+      background-color: green;
+      margin: 0;
+    }
+
+    .editor-hidden {
+      display: none;
+    }
   }
 }
 
+
+/* make a function for these later */
 @media (min-width: 700px) {
   .manage-interface-container {
     grid-template-columns: 1fr 1fr;

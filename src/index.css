@@ -12,6 +12,7 @@ body {
   background-color: #dbbea1;
   position: absolute;
   inset: 0;
+  margin: 0;
 }
 
 #root {
@@ -78,7 +79,17 @@ nav .active-nav-button {
 .manage-interface-container .set-preview-container {
   background-color: red;
 }
+.manage-interface-container .set-preview-container .edit-set-container {
+  position: absolute;
+  inset: 0;
+  background-color: green;
+  margin: 0;
+}
+.manage-interface-container .set-preview-container .editor-hidden {
+  display: none;
+}
 
+/* make a function for these later */
 @media (min-width: 700px) {
   .manage-interface-container {
     grid-template-columns: 1fr 1fr;
