@@ -1,0 +1,19 @@
+$breakpoints: (
+  "xs": "min-width: 500px",
+  "sm": "min-width: 700px",
+  "md": "min-width: 1000px",
+  "lg": "min-width: 1200px",
+  "xl": "min-width: 1400px",
+  "xxl": "min-width: 1800px",
+);
+
+@mixin breakpoint($user-value) {
+  $my-map: map-get($breakpoints, $user-value);
+  @if $my-map {
+    @media (#{$my-map}) {
+      @content;
+    }
+  } @else {
+    @error "The breakpoint #{$user-value} does not exist."
+  }
+}

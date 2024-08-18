@@ -23,25 +23,25 @@
 
 
 /* make a function for these later */
-@media (min-width: 700px) {
+@include breakpoint(sm) {
   .manage-interface-container {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (min-width: 1000px) {
+@include breakpoint(md) {
   .manage-interface-container {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media (min-width: 1400px) {
+@include breakpoint(xl) {
   .manage-interface-container {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
-@media (min-width: 1800px) {
+@include breakpoint(xxl) {
   .manage-interface-container {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }

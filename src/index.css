@@ -114,10 +114,10 @@ nav .active-nav-button {
   cursor: pointer;
   background-color: #a37b73;
   color: black;
-  min-width: 60%;
+  width: 15rem;
   aspect-ratio: 5/3;
   padding: 1rem;
-  font-size: 3rem;
+  font-size: 1.5rem;
   border-radius: 1rem;
   text-align: center;
   overflow: scroll;
