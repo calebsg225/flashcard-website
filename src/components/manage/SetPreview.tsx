@@ -6,8 +6,8 @@ interface SetPreviewProps {
   setNumber: number,
   setData: SetData,
   selectedSet: number,
-  setSelectedSet: Function,
-  setActiveSection: Function
+  setSelectedSet: React.Dispatch<React.SetStateAction<number>>,
+  setActiveSection: React.Dispatch<React.SetStateAction<string>>
 }
 
 export const SetPreview = ({setNumber, setData, selectedSet, setSelectedSet, setActiveSection}: SetPreviewProps) => {

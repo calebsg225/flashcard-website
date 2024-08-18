@@ -2,7 +2,7 @@ interface FlashcardProps {
   term: string,
   definition: string,
   isFlipped: boolean,
-  setIsFlipped: Function
+  setIsFlipped: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const Flashcard = ({term, definition, isFlipped, setIsFlipped}: FlashcardProps) => {

@@ -33,9 +33,9 @@ nav button {
   padding: 0.4rem 1rem;
   color: #d34f73;
   cursor: pointer;
-  background-color: hsla(0, 0%, 100%, 0);
+  background-color: hsla(0deg, 0%, 100%, 0);
   font-size: 2rem;
-  border: hsla(0, 0%, 100%, 0) solid 2px;
+  border: hsla(0deg, 0%, 100%, 0) solid 2px;
   transition: color 0.2s, border 0.2s;
 }
 nav button:hover {
@@ -49,7 +49,7 @@ nav .active-nav-button {
 .study-interface-container {
   max-width: 55rem;
   margin: 2rem auto;
-  padding: 3rem;
+  padding: 1rem;
   background-color: #3f292b;
   flex-direction: column;
   border-radius: 2rem;
@@ -114,12 +114,13 @@ nav .active-nav-button {
   cursor: pointer;
   background-color: #a37b73;
   color: black;
-  width: 40rem;
+  min-width: 60%;
   aspect-ratio: 5/3;
   padding: 1rem;
   font-size: 3rem;
   border-radius: 1rem;
   text-align: center;
+  overflow: scroll;
 }
 
 .term {

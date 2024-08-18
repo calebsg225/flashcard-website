@@ -3,8 +3,8 @@ import { SetPreview } from "./SetPreview";
 
 interface ManageInterfaceProps {
   selectedSet: number;
-  setSelectedSet: Function;
-  setActiveSection: Function;
+  setSelectedSet: React.Dispatch<React.SetStateAction<number>>;
+  setActiveSection: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const ManageInterface = ({selectedSet, setSelectedSet, setActiveSection}: ManageInterfaceProps) => {

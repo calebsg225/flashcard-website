@@ -1,7 +1,7 @@
 interface NavBarProps {
   navItems: string[];
   activeSection: string;
-  setActiveSection: Function;
+  setActiveSection: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const NavBar = ({navItems, activeSection, setActiveSection}: NavBarProps) => {

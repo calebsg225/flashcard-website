@@ -3,7 +3,7 @@ import { SetData } from "../../types/setDataTypes"
 // pop-up that shows up when editing a set
 interface EditSetProps {
   isEditing: boolean
-  setIsEditing: Function
+  setIsEditing: React.Dispatch<React.SetStateAction<boolean>>
   setData: SetData
 }
 

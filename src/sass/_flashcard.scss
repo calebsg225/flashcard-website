@@ -2,12 +2,13 @@
   cursor: pointer;
   background-color: $card-background-color;
   color: $card-font-color;
-  width: 40rem;
+  min-width: 60%;
   aspect-ratio: 5/3;
   padding: 1rem;
   font-size: 3rem;
   border-radius: 1rem;
   text-align: center;
+  overflow: scroll;
 }
 
 .term {
