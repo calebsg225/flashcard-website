@@ -7,21 +7,38 @@
   border-radius: 2rem;
 
   .card-nav {
+    width: 100%;
     display: grid;
-    grid-template-columns: 4rem 1fr 4rem;
-    column-gap: 1rem;
+    grid-template: 
+            "flash flash"
+            "left right"
+    ;
+    gap: 1rem;
     margin: 1rem;
     button {
       cursor: pointer;
       background-color: $card-nav-button-color;
       border: none;
       border-radius: 1rem;
-      font-size: 5rem;
-      line-height: 3.7rem;
+      img {
+        width: 30%;
+      }
+    }
+    &:first-child {
+      grid-area: left;
+    }
+    &:last-child {
+      grid-area: right;
+    }
+    .flashcard {
+      grid-area: flash;
     }
   }
 }
 
-@media (max-width: 500px) {
-  
+@include breakpoint(sm) {
+  .study-interface-container {
+    .card-nav {
+    }
+  }
 }

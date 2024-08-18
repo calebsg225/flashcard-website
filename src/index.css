@@ -55,9 +55,10 @@ nav .active-nav-button {
   border-radius: 2rem;
 }
 .study-interface-container .card-nav {
+  width: 100%;
   display: grid;
-  grid-template-columns: 4rem 1fr 4rem;
-  column-gap: 1rem;
+  grid-template: "flash flash" "left right";
+  gap: 1rem;
   margin: 1rem;
 }
 .study-interface-container .card-nav button {
@@ -65,8 +66,18 @@ nav .active-nav-button {
   background-color: #db7f67;
   border: none;
   border-radius: 1rem;
-  font-size: 5rem;
-  line-height: 3.7rem;
+}
+.study-interface-container .card-nav button img {
+  width: 30%;
+}
+.study-interface-container .card-nav:first-child {
+  grid-area: left;
+}
+.study-interface-container .card-nav:last-child {
+  grid-area: right;
+}
+.study-interface-container .card-nav .flashcard {
+  grid-area: flash;
 }
 
 .manage-interface-container {
@@ -114,7 +125,6 @@ nav .active-nav-button {
   cursor: pointer;
   background-color: #a37b73;
   color: black;
-  width: 15rem;
   aspect-ratio: 5/3;
   padding: 1rem;
   font-size: 1.5rem;

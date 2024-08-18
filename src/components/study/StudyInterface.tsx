@@ -2,6 +2,9 @@ import { useState } from "react";
 import { sampleSets } from "../../data/sample_sets";
 import Flashcard from "../Flashcard";
 
+import leftArrowImage from '../../assets/left-arrow.png';
+import rightArrowImage from '../../assets/right-arrow.png';
+
 interface StudyInterfaceProps {
   set: number;
 }
@@ -27,9 +30,13 @@ export const StudyInterface = ({set}: StudyInterfaceProps) => {
   return (
     <section className="study-interface-container flex no-select">
       <div className="card-nav">
-        <button onClick={() => handleLeftClick()}>{`/ \\`}</button>
+        <button onClick={() => handleLeftClick()}>
+          <img src={leftArrowImage} alt="left_arrow" />
+        </button>
         <Flashcard term={term} definition={definition} isFlipped={isFlipped} setIsFlipped={setIsFlipped}/>
-        <button onClick={() => {handleRightClick()}}>{`\\ /`}</button>
+        <button onClick={() => {handleRightClick()}}>
+          <img src={rightArrowImage} alt="right_arrow" />
+        </button>
       </div>
     </section>
   );
