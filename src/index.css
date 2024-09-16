@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 .flex {
   display: flex;
   justify-content: center;
@@ -9,7 +10,8 @@
 }
 
 body {
-  background-color: #dbbea1;
+  font-family: "Nunito";
+  background-color: white;
   position: absolute;
   inset: 0;
   margin: 0;
@@ -23,34 +25,38 @@ body {
 
 nav {
   height: 5rem;
-  background-color: #3f292b;
+  background-color: hsl(286, 100%, 12%);
+}
+nav div {
+  height: 100%;
+  margin: auto;
+  max-width: 55rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  border-radius: 2rem;
 }
-nav button {
+nav div button {
   padding: 0.4rem 1rem;
-  color: #d34f73;
+  color: hsl(286, 100%, 93%);
   cursor: pointer;
-  background-color: hsla(0deg, 0%, 100%, 0);
+  background-color: hsla(0, 0%, 100%, 0);
   font-size: 2rem;
-  border: hsla(0deg, 0%, 100%, 0) solid 2px;
+  border: hsla(0, 0%, 100%, 0) solid 2px;
   transition: color 0.2s, border 0.2s;
 }
-nav button:hover {
-  border-bottom: rgb(99, 99, 99) solid 2px;
-  color: rgb(99, 99, 99);
+nav div button:hover {
+  border-bottom: hsl(286, 100%, 76%) solid 2px;
+  color: hsl(286, 100%, 76%);
 }
 nav .active-nav-button {
-  border-bottom: #d34f73 solid 2px;
+  border-bottom: hsl(286, 100%, 93%) solid 2px;
 }
 
 .study-interface-container {
   max-width: 55rem;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: #3f292b;
+  background-color: hsl(286, 100%, 12%);
   flex-direction: column;
   border-radius: 2rem;
 }
@@ -63,7 +69,7 @@ nav .active-nav-button {
 }
 .study-interface-container .card-nav button {
   cursor: pointer;
-  background-color: #db7f67;
+  background-color: hsl(286, 100%, 93%);
   border: none;
   border-radius: 1rem;
 }
@@ -80,6 +86,14 @@ nav .active-nav-button {
   grid-area: flash;
 }
 
+@media (min-width: 700px) {
+  .study-interface-container .card-nav {
+    grid-template: "left flash right" auto/10% 1fr 10%;
+  }
+  .study-interface-container .card-nav button img {
+    width: 100%;
+  }
+}
 .manage-interface-container {
   background-color: blue;
   padding: 2rem;
@@ -123,11 +137,12 @@ nav .active-nav-button {
 }
 .flashcard {
   cursor: pointer;
-  background-color: #a37b73;
-  color: black;
+  background-color: hsl(286, 100%, 93%);
+  color: hsl(286, 100%, 12%);
   aspect-ratio: 5/3;
   padding: 1rem;
   font-size: 1.5rem;
+  font-weight: 700;
   border-radius: 1rem;
   text-align: center;
   overflow: scroll;

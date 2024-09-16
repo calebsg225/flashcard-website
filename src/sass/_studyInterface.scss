@@ -2,7 +2,7 @@
   max-width: 55rem;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: $study-interface-background-color;
+  background-color: $prim-900;
   flex-direction: column;
   border-radius: 2rem;
 
@@ -17,7 +17,7 @@
     margin: 1rem;
     button {
       cursor: pointer;
-      background-color: $card-nav-button-color;
+      background-color: $prim-100;
       border: none;
       border-radius: 1rem;
       img {
@@ -39,6 +39,14 @@
 @include breakpoint(sm) {
   .study-interface-container {
     .card-nav {
+      grid-template: 
+        "left flash right" auto / 10% 1fr 10%
+      ;
+      button {
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 }

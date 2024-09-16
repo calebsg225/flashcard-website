@@ -1,10 +1,11 @@
 .flashcard {
   cursor: pointer;
-  background-color: $card-background-color;
-  color: $card-font-color;
+  background-color: $prim-100;
+  color: $prim-900;
   aspect-ratio: 5/3;
   padding: 1rem;
   font-size: 1.5rem;
+  font-weight: 700;
   border-radius: 1rem;
   text-align: center;
   overflow: scroll;

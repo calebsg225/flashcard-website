@@ -1,14 +1,19 @@
-// colors
-$background-color: #dbbea1;
+// font Nunito
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-$navbar-background-color: #3f292b;
-$navbar-font-color: #d34f73;
+// primary colors
+$prim-900: hsl(286 100 12);
+$prim-700: hsl(286 100 27);
+$prim-500: hsl(286 100 50);
+$prim-300: hsl(286 100 76);
+$prim-100: hsl(286 100 93);
 
-$study-interface-background-color: #3f292b;
-$card-nav-button-color: #db7f67;
-
-$card-background-color: #a37b73;
-$card-font-color: black;
+// grey colors
+$grey-900: hsl(291, 9%, 16%);
+$grey-700: hsl(284, 8%, 27%);
+$grey-500: hsl(287, 8%, 44%);
+$grey-300: hsl(286, 16%, 69%);
+$grey-100: hsl(287, 28%, 81%);
 
 // navbar offset
 $navbar-offset-distance: 5rem;

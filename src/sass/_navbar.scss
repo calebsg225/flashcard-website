@@ -1,27 +1,31 @@
 nav {
   height: $navbar-offset-distance;
-  background-color: $navbar-background-color;
+  background-color: $prim-900;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  div {
+    height: 100%;
+    margin: auto;
+    max-width: 55rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 
-  border-radius: 2rem;
-  button {
-    padding: .4rem 1rem;
-    color: $navbar-font-color;
-    cursor: pointer;
-    background-color: hsla(0, 0%, 100%, 0);
-    font-size: 2rem;
-    border: hsla(0, 0%, 100%, 0) solid 2px;
-    transition: color .2s, border .2s;
-    &:hover {
-      border-bottom: rgb(99, 99, 99) solid 2px;
-      color: rgb(99, 99, 99);
+    button {
+      padding: .4rem 1rem;
+      color: $prim-100;
+      cursor: pointer;
+      background-color: hsla(0, 0%, 100%, 0);
+      font-size: 2rem;
+      border: hsla(0, 0%, 100%, 0) solid 2px;
+      transition: color .2s, border .2s;
+      &:hover {
+        border-bottom: $prim-300 solid 2px;
+        color: $prim-300;
+      }
     }
   }
 
   .active-nav-button {
-    border-bottom: $navbar-font-color solid 2px;
+    border-bottom: $prim-100 solid 2px;
   }
 }
