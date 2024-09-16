@@ -21,8 +21,6 @@
   }
 }
 
-
-/* make a function for these later */
 @include breakpoint(sm) {
   .manage-interface-container {
     grid-template-columns: 1fr 1fr;
