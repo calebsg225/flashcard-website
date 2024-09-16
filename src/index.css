@@ -11,7 +11,7 @@
 
 body {
   font-family: "Nunito";
-  background-color: white;
+  background-color: hsl(286, 100%, 93%);
   position: absolute;
   inset: 0;
   margin: 0;
@@ -149,11 +149,11 @@ nav .active-nav-button {
 }
 
 .term {
-  border: solid 4px red;
+  border: solid 6px red;
 }
 
 .definition {
-  border: solid 4px rgb(0, 255, 0);
+  border: solid 6px rgb(0, 255, 0);
 }
 
 /*# sourceMappingURL=index.css.map */

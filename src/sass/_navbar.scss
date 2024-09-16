@@ -15,7 +15,7 @@ nav {
       color: $prim-100;
       cursor: pointer;
       background-color: hsla(0, 0%, 100%, 0);
-      font-size: 2rem;
+      font-size: $fs-400;
       border: hsla(0, 0%, 100%, 0) solid 2px;
       transition: color .2s, border .2s;
       &:hover {
