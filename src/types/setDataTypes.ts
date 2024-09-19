@@ -8,6 +8,8 @@ type SetData = {
   cards: CardArray
 }
 
-type SetArray = SetData[]
+type SampleSets = {[key: string]: SetData}
 
-export type { SetArray, SetData, CardArray }
+type SelectedSet = 'sample' | 'user';
+
+export type { SampleSets, SetData, CardArray, SelectedSet }

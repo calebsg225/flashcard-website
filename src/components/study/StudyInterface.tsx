@@ -6,7 +6,7 @@ import leftArrowImage from '../../assets/left-arrow.png';
 import rightArrowImage from '../../assets/right-arrow.png';
 
 interface StudyInterfaceProps {
-  set: number;
+  set: string;
 }
 
 export const StudyInterface = ({set}: StudyInterfaceProps) => {

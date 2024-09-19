@@ -1,7 +1,7 @@
-import { SetArray } from "../types/setDataTypes";
+import { SampleSets } from "../types/setDataTypes";
 
-const sampleSets: SetArray = [
-  {
+const sampleSets: SampleSets = {
+  "sample": {
     title: "Sample Set",
     cards: [
       {
@@ -14,6 +14,6 @@ const sampleSets: SetArray = [
       }
     ],
   }
-];
+};
 
 export { sampleSets }
