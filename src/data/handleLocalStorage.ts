@@ -2,20 +2,37 @@
 
 import { SetData } from "../types/setDataTypes";
 
-// retrieve a set
-const retrieveSet = (setKey: string): SetData => {
-  const retrievedSet = localStorage.getItem(setKey);
-  return retrievedSet ? JSON.parse(retrievedSet) : {};
+const localStorageKey = 'flashcard_website_set_data';
+
+// gets complete set data from localStorage
+const getSetsData = (): {[key: string]: SetData} => {
+  const sets = localStorage.getItem(localStorageKey);
+  return sets ? JSON.parse(sets) : {};
 }
 
-// replace existing set data with a new set
-const replaceSet = (setKey: string, setData: SetData) => {
-  localStorage.setItem(setKey, JSON.stringify(setData));
+// create a new set
+const createSet = (setKey: string, setData: SetData): void => {
+  const sets = getSetsData();
+  sets[setKey] = setData;
+}
+
+// retrieve a specific set
+const retrieveSet = (setKey: string): SetData => {
+  const sets = getSetsData();
+  const retrievedSet: SetData = sets[setKey];
+  return retrievedSet;
+}
+
+// update existing set data with a new set
+const updateSet = (setKey: string, setData: SetData): void => {
+  const sets = getSetsData();
+  sets[setKey] = setData;
 }
 
 // delete a set
 const deleteSet = (setKey: string) => {
-  localStorage.removeItem(setKey);
+  const sets = getSetsData();
+  delete sets[setKey];
 }
 
-export { retrieveSet, replaceSet, deleteSet };
+export { createSet, retrieveSet, updateSet, deleteSet };
