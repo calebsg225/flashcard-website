@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <NavBar navItems={navItems} activeSection={activeSection} setActiveSection={setActiveSection} />
-      {activeSection === 'Study' && <StudyInterface set={selectedSet}/> }
+      {activeSection === 'Study' && <StudyInterface /> }
       {
         activeSection === 'Manage' 
         && 

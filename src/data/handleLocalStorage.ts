@@ -1,6 +1,7 @@
 // functions for handling localStorage interactions
 
 import { SetData } from "../types/setDataTypes";
+import { sampleSets } from "./sample_sets";
 
 // key used to store set data in localStorage
 const localStorageSetsKey = 'flashcard_website_set_data';
@@ -43,10 +44,24 @@ const deleteSet = (setKey: string) => {
 
 // HANDLE CURRENT SET
 
+/*
+Current Set Behavior:
+- if there is no current set, [use sample data].
+- if current set is a set from sets data and that set is deleted, switch to sample data.
+*/
+
+// set current set to sample data
+const setSampleCurrentSet = (): SetData => {
+  const sampleSet: SetData = sampleSets['sample'];
+  localStorage.setItem(localStorageCurrentSetKey, JSON.stringify(sampleSet));
+  return sampleSet;
+}
+
 // get current set
+// if set does not exist in localstorage, use sample data
 const getCurrentSetData = (): SetData => {
   const set = localStorage.getItem(localStorageCurrentSetKey);
-  return set ? JSON.parse(set) : {};
+  return set ? JSON.parse(set) : setSampleCurrentSet();
 }
 
 // gets the current active set

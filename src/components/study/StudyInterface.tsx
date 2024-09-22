@@ -1,28 +1,25 @@
 import { useState } from "react";
-import { sampleSets } from "../../data/sample_sets";
 import Flashcard from "../Flashcard";
+import { retrieveCurrentSet } from "../../data/handleLocalStorage";
 
 import leftArrowImage from '../../assets/left-arrow.png';
 import rightArrowImage from '../../assets/right-arrow.png';
 
-interface StudyInterfaceProps {
-  set: string;
-}
-
-export const StudyInterface = ({set}: StudyInterfaceProps) => {
+export const StudyInterface = () => {
   const [ isFlipped, setIsFlipped ] = useState(false);
   const [ currentCard, setCurrentCard ] = useState(0);
-  const { term, definition } = sampleSets[set].cards[currentCard];
+  const currentSet = retrieveCurrentSet();
+  const { term, definition } = currentSet.cards[currentCard];
 
   // add random card order in future
   const handleLeftClick = () => {
-    if ( !currentCard ) { setCurrentCard(sampleSets[set].cards.length - 1) }
+    if ( !currentCard ) { setCurrentCard(currentSet.cards.length - 1) }
     else { setCurrentCard(currentCard - 1) }
     setIsFlipped(false);
   }
   
   const handleRightClick = () => {
-    if ( currentCard >= sampleSets[set].cards.length - 1 ) { setCurrentCard(0) }
+    if ( currentCard >= currentSet.cards.length - 1 ) { setCurrentCard(0) }
     else { setCurrentCard(currentCard + 1) }
     setIsFlipped(false);
   }

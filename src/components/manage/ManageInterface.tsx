@@ -1,4 +1,3 @@
-import { sampleSets } from "../../data/sample_sets";
 import { SelectedSet } from "../../types/setDataTypes";
 import { SetPreview } from "./SetPreview";
 
