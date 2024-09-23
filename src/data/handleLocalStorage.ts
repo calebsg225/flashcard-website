@@ -3,90 +3,96 @@
 import { SetData } from "../types/setDataTypes";
 import { sampleSets } from "./sample_sets";
 
-// key used to store set data in localStorage
-const localStorageSetsKey = 'flashcard_website_set_data';
+class HandleSetsData {
+  localStorageSetsKey: string; // key used to store set data in localStorage
+  constructor() {
+    this.localStorageSetsKey = 'flashcard_website_set_data';
+  }
 
-// key used to store current set in localStorage
-const localStorageCurrentSetKey = 'flashcard_website_current_set';
+  // gets and returns complete sets data from localStorage
+  getSetsData = (): {[key: string]: SetData} => {
+    const sets = localStorage.getItem(this.localStorageSetsKey);
+    return sets ? JSON.parse(sets) : {};
+  }
 
-// HANDLE SETS DATA
+  // replaces sets data in localStorage with new data
+  private replaceSetsData = (data: {[key: string]: SetData}): void => {
+    localStorage.setItem(this.localStorageSetsKey, JSON.stringify(data));
+  }
 
-// gets complete set data from localStorage
-const getSetsData = (): {[key: string]: SetData} => {
-  const sets = localStorage.getItem(localStorageSetsKey);
-  return sets ? JSON.parse(sets) : {};
+  // retrieve a specific set
+  retrieveSet = (setKey: string): SetData => {
+    const sets = this.getSetsData();
+    const retrievedSet: SetData = sets[setKey];
+    return retrievedSet;
+  }
+
+  // update existing set data with a new set
+  updateSet = (setKey: string, setData: SetData): void => {
+    const sets = this.getSetsData();
+    sets[setKey] = setData;
+    this.replaceSetsData(sets);
+  }
+
+  // delete a set
+  deleteSet = (setKey: string) => {
+    const sets = this.getSetsData();
+    delete sets[setKey];
+    this.replaceSetsData(sets);
+  }
 }
 
-const setSetsData = (data: {[key: string]: SetData}): void => {
-  localStorage.setItem(localStorageSetsKey, JSON.stringify(data));
+class HandleCurrentSet {
+  localStorageCurrentSetKey: string; // key used to store current set in localStorage
+  constructor() {
+    this.localStorageCurrentSetKey = 'flashcard_website_current_set';
+  }
+  /*
+  Current Set Behavior:
+  - if there is no current set, [use sample data].
+  - if current set is a set from sets data and that set is deleted, switch to sample data.
+  */
+
+  // set current set to sample data
+  private setSampleCurrentSet = (): SetData => {
+    const sampleSet: SetData = sampleSets['sample'];
+    localStorage.setItem(this.localStorageCurrentSetKey, JSON.stringify(sampleSet));
+    return sampleSet;
+  }
+
+  // get current set
+  // if set does not exist in localstorage, use sample data
+  private getCurrentSetData = (): SetData => {
+    const set = localStorage.getItem(this.localStorageCurrentSetKey);
+    return set ? JSON.parse(set) : this.setSampleCurrentSet();
+  }
+
+  // gets the current active set
+  retrieveCurrentSet = (): SetData => {
+    return this.getCurrentSetData();
+  }
+
+  // sets the current active set
+  updateCurrentSet = (set: SetData) => {
+    localStorage.setItem(this.localStorageCurrentSetKey, JSON.stringify(set));
+  }
+
+  // checks to see if there is currently an active set
+  hasCurrentSet = (): boolean => {
+    const set = this.getCurrentSetData();
+    if (set.title && set.cards && set.cards.length) return true;
+    return false;
+  }
+  
 }
 
-// retrieve a specific set
-const retrieveSet = (setKey: string): SetData => {
-  const sets = getSetsData();
-  const retrievedSet: SetData = sets[setKey];
-  return retrievedSet;
+class HandleLocalStorage {
+  handleSetsData: HandleSetsData;
+  handleCurrentSet: HandleCurrentSet;
+  constructor() {
+    this.handleSetsData = new HandleSetsData;
+    this.handleCurrentSet = new HandleCurrentSet;
+  }
 }
 
-// update existing set data with a new set
-const updateSet = (setKey: string, setData: SetData): void => {
-  const sets = getSetsData();
-  sets[setKey] = setData;
-  setSetsData(sets);
-}
-
-// delete a set
-const deleteSet = (setKey: string) => {
-  const sets = getSetsData();
-  delete sets[setKey];
-  setSetsData(sets);
-}
-
-// HANDLE CURRENT SET
-
-/*
-Current Set Behavior:
-- if there is no current set, [use sample data].
-- if current set is a set from sets data and that set is deleted, switch to sample data.
-*/
-
-// set current set to sample data
-const setSampleCurrentSet = (): SetData => {
-  const sampleSet: SetData = sampleSets['sample'];
-  localStorage.setItem(localStorageCurrentSetKey, JSON.stringify(sampleSet));
-  return sampleSet;
-}
-
-// get current set
-// if set does not exist in localstorage, use sample data
-const getCurrentSetData = (): SetData => {
-  const set = localStorage.getItem(localStorageCurrentSetKey);
-  return set ? JSON.parse(set) : setSampleCurrentSet();
-}
-
-// gets the current active set
-const retrieveCurrentSet = (): SetData => {
-  return getCurrentSetData();
-}
-
-// sets the current active set
-const updateCurrentSet = (set: SetData) => {
-  localStorage.setItem(localStorageCurrentSetKey, JSON.stringify(set));
-}
-
-// checks to see if there is currently an active set
-const hasCurrentSet = (): boolean => {
-  const set = getCurrentSetData();
-  if (set.title && set.cards && set.cards.length) return true;
-  return false;
-}
-
-export {
-  retrieveSet, 
-  updateSet, 
-  deleteSet, 
-  getCurrentSetData, 
-  retrieveCurrentSet, 
-  updateCurrentSet,
-  hasCurrentSet
-};
+export default new HandleLocalStorage;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Flashcard from "../Flashcard";
-import { retrieveCurrentSet } from "../../data/handleLocalStorage";
+import handleLocalStorage from "../../data/handleLocalStorage";
 
 import leftArrowImage from '../../assets/left-arrow.png';
 import rightArrowImage from '../../assets/right-arrow.png';
@@ -8,7 +8,7 @@ import rightArrowImage from '../../assets/right-arrow.png';
 export const StudyInterface = () => {
   const [ isFlipped, setIsFlipped ] = useState(false);
   const [ currentCard, setCurrentCard ] = useState(0);
-  const currentSet = retrieveCurrentSet();
+  const currentSet = handleLocalStorage.handleCurrentSet.retrieveCurrentSet();
   const { term, definition } = currentSet.cards[currentCard];
 
   // add random card order in future
