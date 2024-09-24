@@ -1,6 +1,6 @@
 // functions for handling localStorage interactions
 
-import { SetData } from "../types/setDataTypes";
+import { SetData, Sets } from "../types/setDataTypes";
 import { sampleSets } from "./sample_sets";
 
 class HandleSetsData {
@@ -10,13 +10,13 @@ class HandleSetsData {
   }
 
   // gets and returns complete sets data from localStorage
-  getSetsData = (): {[key: string]: SetData} => {
+  getSetsData = (): Sets => {
     const sets = localStorage.getItem(this.localStorageSetsKey);
     return sets ? JSON.parse(sets) : {};
   }
 
   // replaces sets data in localStorage with new data
-  private replaceSetsData = (data: {[key: string]: SetData}): void => {
+  private replaceSetsData = (data: Sets): void => {
     localStorage.setItem(this.localStorageSetsKey, JSON.stringify(data));
   }
 

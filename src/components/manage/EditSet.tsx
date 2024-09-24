@@ -2,22 +2,22 @@ import { SetData } from "../../types/setDataTypes"
 
 // pop-up that shows up when editing a set
 interface EditSetProps {
-  isEditing: boolean
-  setIsEditing: React.Dispatch<React.SetStateAction<boolean>>
-  setData: SetData
+  editing: string;
+  setEditing: React.Dispatch<React.SetStateAction<string>>;
+  setData: SetData;
 }
 
-const EditSet = ({isEditing, setIsEditing, setData}: EditSetProps) => {
+const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
   const handleOnCancel = () => {
-    setIsEditing(false);
+    setEditing('');
   }
 
   const handleOnSave = () => {
-    setIsEditing(false);
+    setEditing('');
   }
 
   return (
-    <section className={`edit-set-container ${isEditing ? '' : 'editor-hidden'}`}>
+    <section className={`edit-set-container ${editing.length ? '' : 'editor-hidden'}`}>
       <h2>{setData.title}</h2>
       <div>
         {setData.cards.map((v, i) => (

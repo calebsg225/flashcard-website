@@ -1,23 +1,26 @@
-import { SelectedSet } from "../../types/setDataTypes";
 import ManageToolbar from "./ManageToolbar";
-import { SetPreview } from "./SetPreview";
+import SetPreview from "./SetPreview";
+import EditSet from "./EditSet";
 import handleLocalStorage from "../../data/handleLocalStorage";
+import { useState } from "react";
 
 interface ManageInterfaceProps {
-  selectedSet: SelectedSet;
-  setSelectedSet: React.Dispatch<React.SetStateAction<SelectedSet>>;
   setActiveSection: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export const ManageInterface = ({selectedSet, setSelectedSet, setActiveSection}: ManageInterfaceProps) => {
+export const ManageInterface = ({setActiveSection}: ManageInterfaceProps) => {
+  const [editing, setEditing] = useState('');
   const setsData = handleLocalStorage.handleSetsData.getSetsData();
   const setsKeys = Object.keys(setsData);
 
   return (
     <section className="manage-interface-container">
-      <ManageToolbar />
+      <ManageToolbar setEditing={setEditing} />
+      {editing.length ? <EditSet editing={editing} setEditing={setEditing} setData={setsData[editing]}/> : <></>}
       {setsKeys.length ? (
-        <>SET PREVIEWS HERE</>
+        <>
+          {setsKeys.map((setId, i) => <SetPreview setData={setsData[setId]} setActiveSection={setActiveSection} key={i} />)}
+        </>
       ) : (
         <div>
           <p>Click here to add a new set!</p>

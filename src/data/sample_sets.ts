@@ -1,6 +1,6 @@
-import { SampleSets } from "../types/setDataTypes";
+import { Sets } from "../types/setDataTypes";
 
-const sampleSets: SampleSets = {
+const sampleSets: Sets = {
   "sample": {
     title: "Sample Set",
     cards: [
