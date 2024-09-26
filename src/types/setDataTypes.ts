@@ -5,6 +5,7 @@ type CardArray = {
 
 type SetData = {
   title: string,
+  description: string,
   cards: CardArray
 }
 

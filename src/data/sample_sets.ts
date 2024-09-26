@@ -3,6 +3,7 @@ import { Sets } from "../types/setDataTypes";
 const sampleSets: Sets = {
   "sample": {
     title: "Sample Set",
+    description: "A mini tutorial in the form of a flashcard set.",
     cards: [
       {
         term: "Where can I manage my flashcard sets?",

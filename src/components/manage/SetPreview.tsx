@@ -32,6 +32,7 @@ const SetPreview = ({setData, setId, setEditing, setActiveSection}: SetPreviewPr
       onClick={() => handleSelectSet()}
     >
       <h2>{setData.title}</h2>
+      <h3>{setData.description}</h3>
       <p>card count: {setData.cards.length}</p>
       <button onClick={(e) => handleEdit(e)}>edit</button>
       <button onClick={(e) => handleDelete(e)}>delete</button>

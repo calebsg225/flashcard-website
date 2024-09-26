@@ -150,6 +150,9 @@ nav .active-nav-button {
   text-align: center;
   overflow: scroll;
 }
+.flashcard::-webkit-scrollbar {
+  display: none;
+}
 .flashcard .flashcard-label {
   position: absolute;
   inset: -6px auto auto auto;
