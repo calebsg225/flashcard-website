@@ -1,5 +1,7 @@
 import { SetData } from "../../types/setDataTypes";
 import handleLocalStorage from "../../data/handleLocalStorage";
+import { useState } from "react";
+import ActionConfirmation from "./ActionConfirmation";
 
 interface SetPreviewProps {
   setData: SetData,
@@ -9,6 +11,16 @@ interface SetPreviewProps {
 }
 
 const SetPreview = ({setData, setId, setEditing, setActiveSection}: SetPreviewProps) => {
+  const [showDeletionConfirmation, setShowDeletionConfirmation] = useState(false);
+  
+  const handleActionConfirmation = (confirm: boolean) => {
+    if (confirm) {
+      handleLocalStorage.deleteSet(setId);
+      // TODO: make delete set update manage interface
+    }
+    setShowDeletionConfirmation(false);
+  }
+
   const handleSelectSet = () => {
     handleLocalStorage.updateCurrentSet(setId);
     setActiveSection('Study');
@@ -21,8 +33,7 @@ const SetPreview = ({setData, setId, setEditing, setActiveSection}: SetPreviewPr
 
   const handleDelete = (e: React.MouseEvent) => {
     e.stopPropagation();
-    handleLocalStorage.deleteSet(setId); // automatically changes current set in local storage if needed
-    // TODO: add deletion confirmation screen
+    setShowDeletionConfirmation(true);
   }
 
   // TODO: display some sort of icon indicating which set is stored as the current set
@@ -31,6 +42,11 @@ const SetPreview = ({setData, setId, setEditing, setActiveSection}: SetPreviewPr
       className={`set-preview-container`}
       onClick={() => handleSelectSet()}
     >
+      {showDeletionConfirmation && <ActionConfirmation 
+        message="Are you sure you would like to delete this set?"
+        action="delete"
+        actionFunction={handleActionConfirmation} 
+      />}
       <h2>{setData.title}</h2>
       <h3>{setData.description}</h3>
       <p>card count: {Object.keys(setData.cards).length}</p>

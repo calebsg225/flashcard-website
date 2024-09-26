@@ -22,11 +22,21 @@ export const ManageInterface = ({setActiveSection}: ManageInterfaceProps) => {
   return (
     <section className="manage-interface-container">
       <ManageToolbar handleCreateSet={handleCreateSet} />
-      {editing.length > 0 && <EditSet editing={editing} setEditing={setEditing} setData={setsData[editing]}/>}
+      {editing.length > 0 && <EditSet 
+        editing={editing} 
+        setEditing={setEditing} 
+        setData={setsData[editing]}
+      />}
       <div>
         {setsKeys.length ? (
           <div>
-            {setsKeys.map((setId, i) => <SetPreview setData={setsData[setId]} setId={setId} setEditing={setEditing} setActiveSection={setActiveSection} key={i} />)}
+            {setsKeys.map((setId, i) => <SetPreview 
+              setData={setsData[setId]} 
+              setId={setId} 
+              setEditing={setEditing} 
+              setActiveSection={setActiveSection} 
+              key={i} 
+            />)}
           </div>
         ) : (
           <button onClick={() => handleCreateSet()}>Create New Set</button>
