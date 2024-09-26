@@ -11,7 +11,7 @@ interface ManageInterfaceProps {
 
 export const ManageInterface = ({setActiveSection}: ManageInterfaceProps) => {
   const [editing, setEditing] = useState(''); // unique id of set currently being edited. Empty string if none.
-  const setsData = handleLocalStorage.handleSetsData.getSetsData(); // get up to date setsdata
+  const setsData = handleLocalStorage.getSetsData(); // get up to date setsdata
   const setsKeys = Object.keys(setsData);
 
   const handleCreateSet = () => {

@@ -10,7 +10,7 @@ interface SetPreviewProps {
 
 const SetPreview = ({setData, setId, setEditing, setActiveSection}: SetPreviewProps) => {
   const handleSelectSet = () => {
-    handleLocalStorage.handleCurrentSet.updateCurrentSet(setData);
+    handleLocalStorage.updateCurrentSet(setId);
     setActiveSection('Study');
   }
 
@@ -21,7 +21,7 @@ const SetPreview = ({setData, setId, setEditing, setActiveSection}: SetPreviewPr
 
   const handleDelete = (e: React.MouseEvent) => {
     e.stopPropagation();
-    handleLocalStorage.handleSetsData.deleteSet(setId);
+    handleLocalStorage.deleteSet(setId);
     // TODO: make sure set is also deleted from currentSet
   }
 

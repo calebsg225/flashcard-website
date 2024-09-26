@@ -8,7 +8,7 @@ import rightArrowImage from '../../assets/right-arrow.png';
 export const StudyInterface = () => {
   const [ isFlipped, setIsFlipped ] = useState(false);
   const [ currentCard, setCurrentCard ] = useState(0);
-  const currentSet = handleLocalStorage.handleCurrentSet.retrieveCurrentSet();
+  const currentSet = handleLocalStorage.retrieveCurrentSetData();
   const { term, definition } = currentSet.cards[currentCard];
 
   // add random card order in future
