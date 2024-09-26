@@ -40,6 +40,11 @@ class HandleSetsData {
     delete sets[setKey];
     this.replaceSetsData(sets);
   }
+
+  hasSet = (setId: string): boolean => {
+    const sets = this.getSetsData();
+    return sets[setId] ? true : false;
+  }
 }
 
 class HandleCurrentSet {

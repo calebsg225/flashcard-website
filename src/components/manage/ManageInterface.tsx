@@ -3,29 +3,40 @@ import SetPreview from "./SetPreview";
 import EditSet from "./EditSet";
 import handleLocalStorage from "../../data/handleLocalStorage";
 import { useState } from "react";
+import { SetData } from "../../types/setDataTypes";
 
 interface ManageInterfaceProps {
   setActiveSection: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const ManageInterface = ({setActiveSection}: ManageInterfaceProps) => {
-  const [editing, setEditing] = useState('');
-  const setsData = handleLocalStorage.handleSetsData.getSetsData();
+  const [editing, setEditing] = useState(''); // unique id of set currently being edited. Empty string if none.
+  const setsData = handleLocalStorage.handleSetsData.getSetsData(); // get up to date setsdata
   const setsKeys = Object.keys(setsData);
+
+  const handleCreateSet = () => {
+    const newSet: SetData = {
+      title: 'New Set',
+      cards: []
+    }
+    const newSetUniqueId = `${Date.now()}`
+    setsData[newSetUniqueId] = newSet;
+    setEditing(newSetUniqueId);
+  }
 
   return (
     <section className="manage-interface-container">
-      <ManageToolbar setEditing={setEditing} />
-      {editing.length ? <EditSet editing={editing} setEditing={setEditing} setData={setsData[editing]}/> : <></>}
-      {setsKeys.length ? (
-        <>
-          {setsKeys.map((setId, i) => <SetPreview setData={setsData[setId]} setActiveSection={setActiveSection} key={i} />)}
-        </>
-      ) : (
-        <div>
-          <p>Click here to add a new set!</p>
-        </div>
-      )}
+      <ManageToolbar handleCreateSet={handleCreateSet} />
+      {editing.length > 0 && <EditSet editing={editing} setEditing={setEditing} setData={setsData[editing]}/>}
+      <div>
+        {setsKeys.length ? (
+          <div>
+            {setsKeys.map((setId, i) => <SetPreview setData={setsData[setId]} setId={setId} setEditing={setEditing} setActiveSection={setActiveSection} key={i} />)}
+          </div>
+        ) : (
+          <button onClick={() => handleCreateSet()}>Create New Set</button>
+        )}
+      </div>
     </section>
   );
 }

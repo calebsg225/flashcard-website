@@ -1,25 +1,12 @@
-import { SetData } from "../../types/setDataTypes";
-import handleLocalStorage from "../../data/handleLocalStorage";
-
 interface ManageToolbarProps {
-  setEditing: React.Dispatch<React.SetStateAction<string>>;
+  handleCreateSet: () => void;
 }
 
-const ManageToolbar = ({setEditing}: ManageToolbarProps) => {
-
-  const handleAddSet = () => {
-    const newSet: SetData = {
-      title: 'New Set',
-      cards: []
-    }
-    const newSetUniqueId = `${Date.now()}`
-    handleLocalStorage.handleSetsData.updateSet(newSetUniqueId, newSet);
-    setEditing(newSetUniqueId);
-  }
+const ManageToolbar = ({handleCreateSet}: ManageToolbarProps) => {
 
   return (
     <div className="manage-toolbar-container">
-      <button onClick={() => handleAddSet()}>Add New Set</button>
+      <button onClick={() => handleCreateSet()}>Create New Set</button>
     </div>
   )
 }

@@ -5,19 +5,22 @@
   gap: 1rem;
   grid-template-columns: 1fr;
 
+  .edit-set-container {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background-color: hsla(0, 0%, 20%, 0.53);
+    padding: 5rem;
+
+    .input-edits-container {
+      background-color: rgb(184, 184, 184);
+      padding: 3rem;
+      border-radius: 2rem;
+    }
+  }
+
   .set-preview-container {
     background-color: red;
-
-    .edit-set-container {
-      position: absolute;
-      inset: 0;
-      background-color: green;
-      margin: 0;
-    }
-
-    .editor-hidden {
-      display: none;
-    }
   }
 }
 

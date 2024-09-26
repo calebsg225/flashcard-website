@@ -101,17 +101,20 @@ nav .active-nav-button {
   gap: 1rem;
   grid-template-columns: 1fr;
 }
+.manage-interface-container .edit-set-container {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: hsla(0deg, 0%, 20%, 0.53);
+  padding: 5rem;
+}
+.manage-interface-container .edit-set-container .input-edits-container {
+  background-color: rgb(184, 184, 184);
+  padding: 3rem;
+  border-radius: 2rem;
+}
 .manage-interface-container .set-preview-container {
   background-color: red;
-}
-.manage-interface-container .set-preview-container .edit-set-container {
-  position: absolute;
-  inset: 0;
-  background-color: green;
-  margin: 0;
-}
-.manage-interface-container .set-preview-container .editor-hidden {
-  display: none;
 }
 
 @media (min-width: 700px) {
