@@ -10,15 +10,12 @@ interface EditSetProps {
 
 const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
   const handleOnCancel = () => {
-    if (!handleLocalStorage.hasSet(editing)) {
-      // delete set completely
-    }
     setEditing('');
   }
 
   const handleOnSave = () => {
+    handleLocalStorage.updateSet(editing, setData);
     setEditing('');
-    // TODO: add set to sets
   }
 
   return (

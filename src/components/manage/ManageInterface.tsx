@@ -13,21 +13,17 @@ export const ManageInterface = ({setActiveSection}: ManageInterfaceProps) => {
   const [editing, setEditing] = useState(''); // unique id of set currently being edited. Empty string if none.
   const setsData = handleLocalStorage.getSetsData(); // get up to date setsdata
   const setsKeys = Object.keys(setsData);
+  const blankSet: SetData = { title: 'Title Here', cards: [] }
 
   const handleCreateSet = () => {
-    const newSet: SetData = {
-      title: 'New Set',
-      cards: []
-    }
-    const newSetUniqueId = `${Date.now()}`
-    setsData[newSetUniqueId] = newSet;
+    const newSetUniqueId = `${Date.now()}`;
     setEditing(newSetUniqueId);
   }
 
   return (
     <section className="manage-interface-container">
       <ManageToolbar handleCreateSet={handleCreateSet} />
-      {editing.length > 0 && <EditSet editing={editing} setEditing={setEditing} setData={setsData[editing]}/>}
+      {editing.length > 0 && <EditSet editing={editing} setEditing={setEditing} setData={blankSet}/>}
       <div>
         {setsKeys.length ? (
           <div>
