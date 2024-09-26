@@ -21,10 +21,11 @@ const SetPreview = ({setData, setId, setEditing, setActiveSection}: SetPreviewPr
 
   const handleDelete = (e: React.MouseEvent) => {
     e.stopPropagation();
-    handleLocalStorage.deleteSet(setId);
-    // TODO: make sure set is also deleted from currentSet
+    handleLocalStorage.deleteSet(setId); // automatically changes current set in local storage if needed
+    // TODO: add deletion confirmation screen
   }
 
+  // TODO: display some sort of icon indicating which set is stored as the current set
   return (
     <div 
       className={`set-preview-container`}

@@ -8,7 +8,7 @@ class HandleLocalStorage {
   localStorageCurrentSetKey: string; // key used to store current set in localStorage
   constructor() {
     this.localStorageSetsKey = 'flashcard_website_set_data';
-    this.localStorageCurrentSetKey = 'flashcard_website_current_set';
+    this.localStorageCurrentSetKey = 'flashcard_website_current_set_id';
   }
 
   // set current set to sample data
@@ -33,7 +33,7 @@ class HandleLocalStorage {
 
   // sets the current active set id
   updateCurrentSet = (setId: string) => {
-    localStorage.setItem(this.localStorageCurrentSetKey, setId);
+    localStorage.setItem(this.localStorageCurrentSetKey, (setId.length ? setId : 'sample'));
   }
 
   // checks to see if there is currently an active set
@@ -73,6 +73,8 @@ class HandleLocalStorage {
   deleteSet = (setId: string) => {
     const sets = this.getSetsData();
     delete sets[setId];
+    // if deleted set is set as current set, default to sample set
+    if (this.getCurrentSetId() === setId) this.updateCurrentSet('');
     this.replaceSetsData(sets);
   }
 
