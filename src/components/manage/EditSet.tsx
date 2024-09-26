@@ -15,7 +15,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
     setData ? setData : {
       title: "",
       description: "",
-      cards: []
+      cards: {}
     }
   );
 
@@ -38,11 +38,36 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
   const handleAddCard = () => {
     setNewSetData({
       ...newSetData,
-      cards: [...newSetData.cards, {term: "", definition: ""}]
+      cards: {
+        ...newSetData.cards,
+        [`${Date.now()*2}`]: {
+          term: "",
+          definition: ""
+        }
+      }
     })
   }
 
-  const handleChangeCard = (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
+  const handleChangeCard = (e: React.ChangeEvent<HTMLInputElement>, cardId: string) => {
+    setNewSetData({
+      ...newSetData,
+      cards: {
+        ...newSetData.cards,
+        [cardId]: {
+          ...newSetData.cards[cardId],
+          [e.target.name]: e.target.value
+        }
+      }
+    })
+  }
+
+  const handleDeleteCard = (cardId: string) => {
+    const newCardsData = newSetData.cards;
+    delete newCardsData[cardId];
+    setNewSetData({
+      ...newSetData,
+      cards: newCardsData
+    })
   }
 
   return (
@@ -64,27 +89,27 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
           type="text" 
         />
         <div className="edit-cards-container">
-          {newSetData.cards.map((v, i) => (
+          {Object.keys(newSetData.cards).map((cardId, i) => (
             <div key={i}>
               <input 
                 className="edit-card-term" 
                 name="term" 
                 placeholder="Card Term..."
-                onChange={(e) => handleChangeCard(e, i)}
+                onChange={(e) => handleChangeCard(e, cardId)}
                 type="text" 
-                defaultValue={v.term} 
+                defaultValue={newSetData.cards[cardId].term} 
               />
               <div className="card-interface">
                 <button className="card-expand">Expand</button>
-                <button className="card-delete">Delete</button>
+                <button onClick={() => handleDeleteCard(cardId)} className="card-delete">Delete</button>
               </div>
               <input 
                 className="edit-card-definition" 
-                name="description" 
+                name="definition" 
                 placeholder="Card Description..."
-                onChange={(e) => handleChangeCard(e, i)}
+                onChange={(e) => handleChangeCard(e, cardId)}
                 type="text" 
-                defaultValue={v.definition} 
+                defaultValue={newSetData.cards[cardId].definition} 
               />
             </div>
           ))}

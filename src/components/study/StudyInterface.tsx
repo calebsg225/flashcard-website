@@ -7,19 +7,20 @@ import rightArrowImage from '../../assets/right-arrow.png';
 
 export const StudyInterface = () => {
   const [ isFlipped, setIsFlipped ] = useState(false);
-  const [ currentCard, setCurrentCard ] = useState(0);
   const currentSet = handleLocalStorage.retrieveCurrentSetData();
-  const { term, definition } = currentSet.cards[currentCard];
+  const cardIds = Object.keys(currentSet.cards);
+  const [ currentCard, setCurrentCard ] = useState(0);
+  const { term, definition } = currentSet.cards[cardIds[currentCard]];
 
   // add random card order in future
   const handleLeftClick = () => {
-    if ( !currentCard ) { setCurrentCard(currentSet.cards.length - 1) }
+    if ( !currentCard ) { setCurrentCard(cardIds.length - 1) }
     else { setCurrentCard(currentCard - 1) }
     setIsFlipped(false);
   }
   
   const handleRightClick = () => {
-    if ( currentCard >= currentSet.cards.length - 1 ) { setCurrentCard(0) }
+    if ( currentCard >= cardIds.length - 1 ) { setCurrentCard(0) }
     else { setCurrentCard(currentCard + 1) }
     setIsFlipped(false);
   }

@@ -9,6 +9,7 @@ interface ManageInterfaceProps {
 }
 
 export const ManageInterface = ({setActiveSection}: ManageInterfaceProps) => {
+  // TODO: make sure user cannot study a set with no cards in it
   const [editing, setEditing] = useState(''); // unique id of set currently being edited. Empty string if none.
   const setsData = handleLocalStorage.getSetsData(); // get up to date setsdata
   const setsKeys = Object.keys(setsData);
