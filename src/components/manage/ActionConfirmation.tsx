@@ -1,11 +1,12 @@
 interface ActionConfirmationProps {
+  title: string;
   message: string;
   confirmName: string;
   cancelFunction: () => void;
   confirmFunction: () => void;
 }
 
-const ActionConfirmation = ({message, confirmName, cancelFunction, confirmFunction}: ActionConfirmationProps) => {
+const ActionConfirmation = ({title, message, confirmName, cancelFunction, confirmFunction}: ActionConfirmationProps) => {
 
   const handleCancel = () => {
     cancelFunction();
@@ -18,6 +19,7 @@ const ActionConfirmation = ({message, confirmName, cancelFunction, confirmFuncti
   return (
     <div className="action-confirmation">
       <div className="action-confirmation-interface">
+        <h3>{title}</h3>
         <p>{message}</p>
         <div>
           <button className="cancel-button" onClick={() => handleCancel()}>Cancel</button>

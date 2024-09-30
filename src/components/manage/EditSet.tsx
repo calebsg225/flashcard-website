@@ -50,7 +50,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
     })
   }
 
-  const handleEditCard = (e: React.ChangeEvent<HTMLInputElement>, cardId: string) => {
+  const handleEditCard = (e: React.ChangeEvent<HTMLTextAreaElement>, cardId: string) => {
     // too much data changing?
     setNewSetData({
       ...newSetData,
@@ -85,7 +85,8 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
   return (
     <section className={`edit-set-container`}>
       {deletingCard.length > 0 && <ActionConfirmation 
-        message="Remove this card? This action is irreversible." 
+        title="Remove Card" 
+        message="This action is irreversible." 
         confirmName="remove" 
         cancelFunction={handleCancelRemoveCard} 
         confirmFunction={handleConfirmRemoveCard} 
@@ -108,32 +109,30 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
         />
         <div className="edit-cards-container">
           {Object.keys(newSetData.cards).map((cardId, i) => (
-            <div key={i}>
-              <input 
+            <div className="edit-card-container" key={i}>
+              <textarea
                 className="edit-card-term" 
                 name="term" 
                 placeholder="Card Term..."
                 onChange={(e) => handleEditCard(e, cardId)}
-                type="text" 
                 defaultValue={newSetData.cards[cardId].term} 
+                data-enable-grammarly="false"
               />
-              <div className="card-interface">
-                <button className="card-expand">Expand</button>
-                <button onClick={() => handleRemoveCard(cardId)} className="card-delete">Remove</button>
-              </div>
-              <input 
+              <button className="card-expand">Expand</button>
+              <button onClick={() => handleRemoveCard(cardId)} className="card-delete">Remove</button>
+              <textarea
                 className="edit-card-definition" 
                 name="definition" 
                 placeholder="Card Description..."
                 onChange={(e) => handleEditCard(e, cardId)}
-                type="text" 
                 defaultValue={newSetData.cards[cardId].definition} 
+                data-enable-grammarly="false"
               />
             </div>
           ))}
           <button onClick={() => handleAddCard()} className="add-card">Add New Card</button>
         </div>
-        <div>
+        <div className="confirmation-interface">
           <button className="cancel-button" onClick={() => {handleOnCancelEdits()}}>Cancel</button>
           <button className="save-button" onClick={() => {handleOnSaveEdits()}}>Save</button>
         </div>

@@ -8,21 +8,27 @@
   z-index: 1000;
 
   .action-confirmation-interface {
-    padding: 3rem;
+    min-width: 35rem;
+    padding: 3rem 2rem;
     border-radius: 2rem;
     background-color: hsl(0, 0%, 100%);
+    h3 {
+      margin: 0;
+      padding: 0 1rem;
+      font-weight: 600;
+      font-size: $fs-300;
+    }
     p {
       margin: 0;
       padding: 1rem;
       font-weight: 600;
-      font-size: $fs-400;
-      text-align: center;
+      font-size: $fs-300;
     }
     div {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: .5rem 2rem;
+      justify-content: flex-end;
+      padding: 1rem 0 0;
 
       button {
         cursor: pointer;
@@ -31,6 +37,7 @@
         border-radius: 1rem;
         font-weight: 700;
         font-size: $fs-200;
+        margin: auto .5rem;
       }
 
       .cancel-button {
