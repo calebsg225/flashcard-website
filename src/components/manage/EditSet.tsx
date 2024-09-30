@@ -1,6 +1,7 @@
 import { useState } from "react";
 import handleLocalStorage from "../../data/handleLocalStorage";
 import { SetData } from "../../types/setDataTypes"
+import ActionConfirmation from "./ActionConfirmation";
 
 // pop-up that shows up when editing a set
 interface EditSetProps {
@@ -11,6 +12,7 @@ interface EditSetProps {
 
 const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
 
+  const [deletingCard, setDeletingCard] = useState('');
   const [newSetData, setNewSetData] = useState<SetData>(
     setData ? setData : {
       title: "",
@@ -19,16 +21,16 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
     }
   );
 
-  const handleOnCancel = () => {
+  const handleOnCancelEdits = () => {
     setEditing('');
   }
 
-  const handleOnSave = () => {
+  const handleOnSaveEdits = () => {
     handleLocalStorage.updateSet(editing, newSetData);
     setEditing('');
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeSetData = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewSetData({
       ...newSetData,
       [e.target.name]: e.target.value
@@ -48,7 +50,8 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
     })
   }
 
-  const handleChangeCard = (e: React.ChangeEvent<HTMLInputElement>, cardId: string) => {
+  const handleEditCard = (e: React.ChangeEvent<HTMLInputElement>, cardId: string) => {
+    // too much data changing?
     setNewSetData({
       ...newSetData,
       cards: {
@@ -61,23 +64,38 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
     })
   }
 
-  const handleDeleteCard = (cardId: string) => {
+  const handleCancelRemoveCard = () => {
+    setDeletingCard("");
+  }
+  
+  const handleConfirmRemoveCard = () => {
     const newCardsData = newSetData.cards;
-    delete newCardsData[cardId];
+    delete newCardsData[deletingCard];
     setNewSetData({
       ...newSetData,
       cards: newCardsData
-    })
+    });
+    setDeletingCard("");
+  }
+
+  const handleRemoveCard = (cardId: string) => {
+    setDeletingCard(cardId);
   }
 
   return (
     <section className={`edit-set-container`}>
+      {deletingCard.length > 0 && <ActionConfirmation 
+        message="remove this card?" 
+        confirmName="remove" 
+        cancelFunction={handleCancelRemoveCard} 
+        confirmFunction={handleConfirmRemoveCard} 
+      />}
       <div className="input-edits-container">
         <input 
           className="edit-title" 
           name="title" 
           placeholder="Set Title..." 
-          onChange={(e) => handleChange(e)} 
+          onChange={(e) => handleChangeSetData(e)} 
           type="text" 
           defaultValue={newSetData.title}
         />
@@ -85,7 +103,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
           className="edit-description" 
           name="description" 
           placeholder="Set Description..." 
-          onChange={(e) => handleChange(e)} 
+          onChange={(e) => handleChangeSetData(e)} 
           type="text" 
         />
         <div className="edit-cards-container">
@@ -95,19 +113,19 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
                 className="edit-card-term" 
                 name="term" 
                 placeholder="Card Term..."
-                onChange={(e) => handleChangeCard(e, cardId)}
+                onChange={(e) => handleEditCard(e, cardId)}
                 type="text" 
                 defaultValue={newSetData.cards[cardId].term} 
               />
               <div className="card-interface">
                 <button className="card-expand">Expand</button>
-                <button onClick={() => handleDeleteCard(cardId)} className="card-delete">Delete</button>
+                <button onClick={() => handleRemoveCard(cardId)} className="card-delete">Delete</button>
               </div>
               <input 
                 className="edit-card-definition" 
                 name="definition" 
                 placeholder="Card Description..."
-                onChange={(e) => handleChangeCard(e, cardId)}
+                onChange={(e) => handleEditCard(e, cardId)}
                 type="text" 
                 defaultValue={newSetData.cards[cardId].definition} 
               />
@@ -116,8 +134,8 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
           <button onClick={() => handleAddCard()} className="add-card">Add New Card</button>
         </div>
         <div>
-          <button className="cancel-button" onClick={() => {handleOnCancel()}}>Cancel</button>
-          <button className="save-button" onClick={() => {handleOnSave()}}>Save</button>
+          <button className="cancel-button" onClick={() => {handleOnCancelEdits()}}>Cancel</button>
+          <button className="save-button" onClick={() => {handleOnSaveEdits()}}>Save</button>
         </div>
       </div>
     </section>
