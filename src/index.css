@@ -104,7 +104,7 @@ nav .active-nav-button {
 .manage-interface-container .edit-set-container {
   position: fixed;
   inset: 0;
-  z-index: 1000;
+  z-index: 100;
   background-color: hsla(0deg, 0%, 20%, 0.53);
   padding: 5rem;
 }
@@ -177,6 +177,49 @@ nav .active-nav-button {
   .flashcard .flashcard-label {
     font-size: 1.5rem;
   }
+}
+.action-confirmation {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsla(0deg, 0%, 37%, 0.334);
+  z-index: 1000;
+}
+.action-confirmation .action-confirmation-interface {
+  padding: 3rem;
+  border-radius: 2rem;
+  background-color: hsl(0deg, 0%, 100%);
+}
+.action-confirmation .action-confirmation-interface p {
+  margin: 0;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: center;
+}
+.action-confirmation .action-confirmation-interface div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+}
+.action-confirmation .action-confirmation-interface div button {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.action-confirmation .action-confirmation-interface div .cancel-button {
+  border: solid 1px black;
+  background-color: white;
+}
+.action-confirmation .action-confirmation-interface div .confirm-button {
+  background-color: rgb(177, 36, 36);
+  color: white;
 }
 
 /*# sourceMappingURL=index.css.map */

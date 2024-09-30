@@ -39,7 +39,7 @@ export const ManageInterface = ({setActiveSection}: ManageInterfaceProps) => {
         setData={setsData[editing]}
       />}
       {deleting.length > 0 && <ActionConfirmation 
-        message="" 
+        message="Delete this set? This action is irreversible." 
         confirmName="delete" 
         cancelFunction={handleCancelDeleteSet} 
         confirmFunction={handleDeleteSet}

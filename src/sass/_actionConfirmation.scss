@@ -1,0 +1,46 @@
+.action-confirmation {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsla(0, 0%, 37%, 0.334);
+  z-index: 1000;
+
+  .action-confirmation-interface {
+    padding: 3rem;
+    border-radius: 2rem;
+    background-color: hsl(0, 0%, 100%);
+    p {
+      margin: 0;
+      padding: 1rem;
+      font-weight: 600;
+      font-size: $fs-400;
+      text-align: center;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .5rem 2rem;
+
+      button {
+        cursor: pointer;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 1rem;
+        font-weight: 700;
+        font-size: $fs-200;
+      }
+
+      .cancel-button {
+        border: solid 1px black;
+        background-color: white;
+      }
+      .confirm-button {
+        background-color: rgb(177, 36, 36);
+        color: white;
+      }
+    }
+  }
+}

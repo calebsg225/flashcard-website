@@ -67,7 +67,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
   const handleCancelRemoveCard = () => {
     setDeletingCard("");
   }
-  
+
   const handleConfirmRemoveCard = () => {
     const newCardsData = newSetData.cards;
     delete newCardsData[deletingCard];
@@ -85,7 +85,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
   return (
     <section className={`edit-set-container`}>
       {deletingCard.length > 0 && <ActionConfirmation 
-        message="remove this card?" 
+        message="Remove this card? This action is irreversible." 
         confirmName="remove" 
         cancelFunction={handleCancelRemoveCard} 
         confirmFunction={handleConfirmRemoveCard} 
@@ -119,7 +119,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
               />
               <div className="card-interface">
                 <button className="card-expand">Expand</button>
-                <button onClick={() => handleRemoveCard(cardId)} className="card-delete">Delete</button>
+                <button onClick={() => handleRemoveCard(cardId)} className="card-delete">Remove</button>
               </div>
               <input 
                 className="edit-card-definition" 

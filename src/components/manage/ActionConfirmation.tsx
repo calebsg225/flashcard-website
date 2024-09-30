@@ -17,10 +17,12 @@ const ActionConfirmation = ({message, confirmName, cancelFunction, confirmFuncti
 
   return (
     <div className="action-confirmation">
-      <div>
+      <div className="action-confirmation-interface">
         <p>{message}</p>
-        <button onClick={() => handleCancel()}>Cancel</button>
-        <button onClick={() => handleConfirm()}>{confirmName.charAt(0).toUpperCase()}{confirmName.substring(1)}</button>
+        <div>
+          <button className="cancel-button" onClick={() => handleCancel()}>Cancel</button>
+          <button className="confirm-button" onClick={() => handleConfirm()}>{confirmName.charAt(0).toUpperCase()}{confirmName.substring(1)}</button>
+        </div>
       </div>
     </div>
   );
