@@ -1,28 +1,50 @@
 // font Nunito
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-// primary colors
+// primary scale
 $prim-900: hsl(286 100 12);
+$prim-800: hsl(286 100 20);
 $prim-700: hsl(286 100 27);
 $prim-500: hsl(286 100 50);
 $prim-300: hsl(286 100 76);
 $prim-100: hsl(286 100 93);
 
-// grey colors
+// secondary scale
+
+// grey scale
 $grey-900: hsl(291, 9%, 16%);
 $grey-700: hsl(284, 8%, 27%);
 $grey-500: hsl(287, 8%, 44%);
 $grey-300: hsl(286, 16%, 69%);
-$grey-100: hsl(287, 28%, 81%);
+$grey-100: hsl(286, 25%, 90%);
+
+// red scale
+$red-900: hsl(0, 86%, 9%);
+$red-700: hsl(0, 100%, 16%);
+$red-600: hsl(0, 100%, 24%);
+$red-500: hsl(0, 100%, 34%);
+$red-300: hsl(0, 76%, 62%);
+$red-100: hsl(0, 93%, 83%);
 
 // font sizes
-$fs-100: .5rem;
-$fs-200: 1rem;
-$fs-300: 1.5rem;
-$fs-400: 2rem;
-$fs-500: 3rem;
-$fs-600: 5rem;
 $fs-700: 8rem;
+$fs-600: 5rem;
+$fs-500: 3rem;
+$fs-400: 2rem;
+$fs-300: 1.5rem;
+$fs-200: 1rem;
+$fs-100: .5rem;
+
+// padding/margin scale
+$pm-900: 10rem;
+$pm-800: 6rem;
+$pm-700: 3rem;
+$pm-600: 2rem;
+$pm-500: 1.6rem;
+$pm-400: 1.2rem;
+$pm-300: 1rem;
+$pm-200: .6rem;
+$pm-100: .2rem;
 
 // navbar offset
 $navbar-offset-distance: 5rem;

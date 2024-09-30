@@ -231,21 +231,24 @@ nav .active-nav-button {
 }
 .action-confirmation .action-confirmation-interface {
   min-width: 35rem;
-  padding: 3rem 2rem;
-  border-radius: 2rem;
-  background-color: hsl(0deg, 0%, 100%);
+  padding: 2rem 1.6rem;
+  border: solid 0.2rem hsl(286deg, 100%, 20%);
+  border-radius: 1.6rem;
+  background-color: hsl(286deg, 25%, 90%);
 }
 .action-confirmation .action-confirmation-interface h3 {
   margin: 0;
   padding: 0 1rem;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  color: hsl(286deg, 100%, 20%);
 }
 .action-confirmation .action-confirmation-interface p {
   margin: 0;
   padding: 1rem;
   font-weight: 600;
   font-size: 1.5rem;
+  color: hsl(286deg, 100%, 27%);
 }
 .action-confirmation .action-confirmation-interface div {
   display: flex;
@@ -255,20 +258,34 @@ nav .active-nav-button {
 }
 .action-confirmation .action-confirmation-interface div button {
   cursor: pointer;
-  padding: 1rem 2rem;
+  padding: 1rem 1.6rem;
   border: none;
   border-radius: 1rem;
   font-weight: 700;
   font-size: 1rem;
-  margin: auto 0.5rem;
+  margin: auto 0.6rem;
+  border-style: solid;
+  border-width: 2px;
 }
 .action-confirmation .action-confirmation-interface div .cancel-button {
-  border: solid 1px black;
-  background-color: white;
+  border-color: hsl(286deg, 100%, 12%);
+  background-color: hsl(286deg, 100%, 93%);
+  color: hsl(286deg, 100%, 12%);
+}
+.action-confirmation .action-confirmation-interface div .cancel-button:hover {
+  border-color: hsl(286deg, 100%, 27%);
+  background-color: hsl(286deg, 100%, 76%);
+  color: hsl(286deg, 100%, 27%);
 }
 .action-confirmation .action-confirmation-interface div .confirm-button {
-  background-color: rgb(177, 36, 36);
-  color: white;
+  border-color: hsl(0deg, 86%, 9%);
+  background-color: hsl(0deg, 93%, 83%);
+  color: hsl(0deg, 86%, 9%);
+}
+.action-confirmation .action-confirmation-interface div .confirm-button:hover {
+  border-color: hsl(0deg, 100%, 16%);
+  background-color: hsl(0deg, 76%, 62%);
+  color: hsl(0deg, 100%, 16%);
 }
 
 /*# sourceMappingURL=index.css.map */

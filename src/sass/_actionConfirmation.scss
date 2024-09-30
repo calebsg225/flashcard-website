@@ -9,44 +9,61 @@
 
   .action-confirmation-interface {
     min-width: 35rem;
-    padding: 3rem 2rem;
-    border-radius: 2rem;
-    background-color: hsl(0, 0%, 100%);
+    padding: $pm-600 $pm-500;
+    border: solid $pm-100 $prim-800;
+    border-radius: $pm-500;
+    background-color: $grey-100;
     h3 {
       margin: 0;
-      padding: 0 1rem;
+      padding: 0 $pm-300;
       font-weight: 600;
-      font-size: $fs-300;
+      font-size: $fs-400;
+      color: $prim-800;
     }
     p {
       margin: 0;
-      padding: 1rem;
+      padding: $pm-300;
       font-weight: 600;
       font-size: $fs-300;
+      color: $prim-700;
     }
     div {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      padding: 1rem 0 0;
+      padding: $pm-300 0 0;
 
       button {
         cursor: pointer;
-        padding: 1rem 2rem;
+        padding: $pm-300 $pm-500;
         border: none;
-        border-radius: 1rem;
+        border-radius: $pm-300;
         font-weight: 700;
         font-size: $fs-200;
-        margin: auto .5rem;
+        margin: auto $pm-200;
+        border-style: solid;
+        border-width: 2px;
       }
 
       .cancel-button {
-        border: solid 1px black;
-        background-color: white;
+        border-color: $prim-900;
+        background-color: $prim-100;
+        color: $prim-900;
+        &:hover {
+          border-color: $prim-700;
+          background-color: $prim-300;
+          color: $prim-700;
+        }
       }
       .confirm-button {
-        background-color: rgb(177, 36, 36);
-        color: white;
+        border-color: $red-900;
+        background-color: $red-100;
+        color: $red-900;
+        &:hover {
+          border-color: $red-700;
+          background-color: $red-300;
+          color: $red-700;
+        }
       }
     }
   }
