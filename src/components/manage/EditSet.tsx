@@ -26,6 +26,11 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
   }
 
   const handleOnSaveEdits = () => {
+    // verify the set has a title and description
+    if (!newSetData.title.length || !newSetData.description.length) {
+      // TODO: send alert
+      return;
+    }
     handleLocalStorage.updateSet(editing, newSetData);
     setEditing('');
   }
@@ -106,6 +111,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
           placeholder="Set Description..." 
           onChange={(e) => handleChangeSetData(e)} 
           type="text" 
+          defaultValue={newSetData.description}
         />
         <div className="edit-cards-container">
           {Object.keys(newSetData.cards).map((cardId, i) => (
