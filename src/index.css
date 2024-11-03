@@ -11,7 +11,7 @@
 
 body {
   font-family: "Nunito";
-  background-color: hsl(286deg, 100%, 93%);
+  background-color: hsl(286, 100%, 93%);
   position: absolute;
   inset: 0;
   margin: 0;
@@ -25,7 +25,7 @@ body {
 
 nav {
   height: 5rem;
-  background-color: hsl(286deg, 100%, 12%);
+  background-color: hsl(286, 100%, 12%);
 }
 nav div {
   height: 100%;
@@ -37,26 +37,26 @@ nav div {
 }
 nav div button {
   padding: 0.4rem 1rem;
-  color: hsl(286deg, 100%, 93%);
+  color: hsl(286, 100%, 93%);
   cursor: pointer;
-  background-color: hsla(0deg, 0%, 100%, 0);
+  background-color: hsla(0, 0%, 100%, 0);
   font-size: 2rem;
-  border: hsla(0deg, 0%, 100%, 0) solid 2px;
+  border: hsla(0, 0%, 100%, 0) solid 2px;
   transition: color 0.2s, border 0.2s;
 }
 nav div button:hover {
-  border-bottom: hsl(286deg, 100%, 76%) solid 2px;
-  color: hsl(286deg, 100%, 76%);
+  border-bottom: hsl(286, 100%, 76%) solid 2px;
+  color: hsl(286, 100%, 76%);
 }
 nav .active-nav-button {
-  border-bottom: hsl(286deg, 100%, 93%) solid 2px;
+  border-bottom: hsl(286, 100%, 93%) solid 2px;
 }
 
 .study-interface-container {
   max-width: 55rem;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: hsl(286deg, 100%, 12%);
+  background-color: hsl(286, 100%, 12%);
   flex-direction: column;
   border-radius: 2rem;
 }
@@ -69,7 +69,7 @@ nav .active-nav-button {
 }
 .study-interface-container .card-nav button {
   cursor: pointer;
-  background-color: hsl(286deg, 100%, 93%);
+  background-color: hsl(286, 100%, 93%);
   border: none;
   border-radius: 1rem;
 }
@@ -129,7 +129,7 @@ nav .active-nav-button {
   position: fixed;
   inset: 0;
   z-index: 100;
-  background-color: hsla(0deg, 0%, 20%, 0.53);
+  background-color: hsla(0, 0%, 20%, 0.53);
   padding: 5rem;
 }
 .edit-set-container .input-edits-container {
@@ -182,8 +182,8 @@ nav .active-nav-button {
 .flashcard {
   position: relative;
   cursor: pointer;
-  background-color: hsl(286deg, 100%, 93%);
-  color: hsl(286deg, 100%, 12%);
+  background-color: hsl(286, 100%, 93%);
+  color: hsl(286, 100%, 12%);
   aspect-ratio: 5/3;
   padding: 1rem;
   font-size: 1.5rem;
@@ -226,29 +226,29 @@ nav .active-nav-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsla(0deg, 0%, 37%, 0.334);
+  background-color: hsla(0, 0%, 37%, 0.334);
   z-index: 1000;
 }
 .action-confirmation .action-confirmation-interface {
   min-width: 35rem;
   padding: 2rem 1.6rem;
-  border: solid 0.2rem hsl(286deg, 100%, 20%);
+  border: solid 0.2rem hsl(286, 100%, 20%);
   border-radius: 1.6rem;
-  background-color: hsl(286deg, 25%, 90%);
+  background-color: hsl(286, 25%, 90%);
 }
 .action-confirmation .action-confirmation-interface h3 {
   margin: 0;
   padding: 0 1rem;
   font-weight: 600;
   font-size: 2rem;
-  color: hsl(286deg, 100%, 20%);
+  color: hsl(286, 100%, 20%);
 }
 .action-confirmation .action-confirmation-interface p {
   margin: 0;
   padding: 1rem;
   font-weight: 600;
   font-size: 1.5rem;
-  color: hsl(286deg, 100%, 27%);
+  color: hsl(286, 100%, 27%);
 }
 .action-confirmation .action-confirmation-interface div {
   display: flex;
@@ -268,24 +268,24 @@ nav .active-nav-button {
   border-width: 2px;
 }
 .action-confirmation .action-confirmation-interface div .cancel-button {
-  border-color: hsl(286deg, 100%, 12%);
-  background-color: hsl(286deg, 100%, 93%);
-  color: hsl(286deg, 100%, 12%);
+  border-color: hsl(286, 100%, 12%);
+  background-color: hsl(286, 100%, 93%);
+  color: hsl(286, 100%, 12%);
 }
 .action-confirmation .action-confirmation-interface div .cancel-button:hover {
-  border-color: hsl(286deg, 100%, 27%);
-  background-color: hsl(286deg, 100%, 76%);
-  color: hsl(286deg, 100%, 27%);
+  border-color: hsl(286, 100%, 27%);
+  background-color: hsl(286, 100%, 76%);
+  color: hsl(286, 100%, 27%);
 }
 .action-confirmation .action-confirmation-interface div .confirm-button {
-  border-color: hsl(0deg, 86%, 9%);
-  background-color: hsl(0deg, 93%, 83%);
-  color: hsl(0deg, 86%, 9%);
+  border-color: hsl(0, 86%, 9%);
+  background-color: hsl(0, 93%, 83%);
+  color: hsl(0, 86%, 9%);
 }
 .action-confirmation .action-confirmation-interface div .confirm-button:hover {
-  border-color: hsl(0deg, 100%, 16%);
-  background-color: hsl(0deg, 76%, 62%);
-  color: hsl(0deg, 100%, 16%);
+  border-color: hsl(0, 100%, 16%);
+  background-color: hsl(0, 76%, 62%);
+  color: hsl(0, 100%, 16%);
 }
 
 /*# sourceMappingURL=index.css.map */
