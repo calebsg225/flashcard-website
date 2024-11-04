@@ -97,6 +97,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
         cancelFunction={handleCancelRemoveCard} 
         confirmFunction={handleConfirmRemoveCard} 
       />}
+      <div className="alerts-container"></div>
       <div className="input-edits-container">
         <input 
           className="edit-title" 
