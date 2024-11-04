@@ -3,15 +3,31 @@ import { Sets } from "../types/setDataTypes";
 const sampleSets: Sets = {
   "sample": {
     title: "Sample Set",
-    description: "A mini tutorial in the form of a flashcard set.",
+    description: "Armstrongs sample set",
     cards: {
       "01": {
-        term: "Where can I manage my flashcard sets?",
-        definition: "Click the Manage tab!"
+        term: "William George Armstrong",
+        definition: "engineer"
       },
       "02": {
-        term: "How do I edit my flashcards?",
-        definition: "Click the Edit button on the set you want to edit!"
+        term: "Lance Armstrong",
+        definition: "100% natural cyclist "
+      },
+      "03": {
+        term: "Neil Armstrong",
+        definition: "moon walker (alledged)"
+      },
+      "04": {
+        term: "Edwin Howard Armstrong",
+        definition: "FM radio"
+      },
+      "05": {
+        term: "Louis Armstrong",
+        definition: "trumpet man"
+      },
+      "06": {
+        term: "Billie Joe Armstrong",
+        definition: "Green Day"
       }
     },
   }

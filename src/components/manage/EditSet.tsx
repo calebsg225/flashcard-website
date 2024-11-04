@@ -31,6 +31,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
       // TODO: send alert
       return;
     }
+    // TODO: vefity that each existing card has both a term and description?
     handleLocalStorage.updateSet(editing, newSetData);
     setEditing('');
   }
