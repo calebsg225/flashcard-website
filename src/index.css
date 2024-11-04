@@ -133,7 +133,8 @@ nav .active-nav-button {
   padding: 5rem;
 }
 .edit-set-container .alerts-container {
-  position: absolute;
+  position: fixed;
+  inset: auto 0 0 auto;
 }
 .edit-set-container .input-edits-container {
   background-color: rgb(184, 184, 184);

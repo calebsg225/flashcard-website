@@ -1,5 +1,5 @@
 interface AlertPopupProps {
-  message: string
+  message: string | undefined
 }
 
 const AlertPopup = ({message}: AlertPopupProps) => {
