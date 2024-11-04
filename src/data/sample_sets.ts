@@ -15,7 +15,7 @@ const sampleSets: Sets = {
       },
       "03": {
         term: "Neil Armstrong",
-        definition: "moon walker (alledged)"
+        definition: "moon walker (alleged)"
       },
       "04": {
         term: "Edwin Howard Armstrong",
