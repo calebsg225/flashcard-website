@@ -2,7 +2,6 @@ import { useState } from "react";
 import handleLocalStorage from "../../data/handleLocalStorage";
 import { SetData } from "../../types/setDataTypes"
 import ActionConfirmation from "./ActionConfirmation";
-import AlertPopup from "./AlertPopup";
 
 // pop-up that shows up when editing a set
 interface EditSetProps {
@@ -13,8 +12,6 @@ interface EditSetProps {
 
 const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
 
-  const [totalAlertCount, setTotalAlertCount] = useState(0);
-  const [alerts, setAlerts] = useState<{[key: string]: string}>({});
   const [deletingCard, setDeletingCard] = useState('');
   const [newSetData, setNewSetData] = useState<SetData>(
     setData ? setData : {
@@ -24,49 +21,27 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
     }
   );
 
-  const handleOnCancelEdits = () => {
-    setEditing('');
-  }
-
-  const deleteAlert = (alertId: string) => {
-    const newAlertsData = alerts;
-    console.log(newAlertsData, alertId);
-    delete newAlertsData[alertId];
-    setAlerts(newAlertsData);
-  }
-
   const handleOnSaveEdits = () => {
     let isProblem = false;
-    let count = totalAlertCount;
-    const problems: {[key: string]: string} = {};
     // verify the set has a title
     if (!newSetData.title.length) {
       isProblem = true;
-      count++;
-      problems[`${count}`] = "Each set must have a title. Add a title.";
-      setTimeout(() => {
-        deleteAlert(`${count}`);
-      }, 5000);
+      // TODO: do something
     }
     // verify the set has a description
     if (!newSetData.description.length) {
       isProblem = true;
-      count++;
-      problems[`${count}`] = "Each set must have a description. Add a description.";
-      setTimeout(() => {
-        deleteAlert(`${count}`);
-      }, 5000);
+      // TODO: do something
     }
     if (isProblem) {
-      setTotalAlertCount(count);
-      setAlerts({
-        ...alerts,
-        ...problems
-      });
       return;
     }
     // TODO: vefity that each existing card has both a term and description?
     handleLocalStorage.updateSet(editing, newSetData);
+    setEditing('');
+  }
+
+  const handleOnCancelEdits = () => {
     setEditing('');
   }
 
@@ -132,10 +107,6 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
         cancelFunction={handleCancelRemoveCard} 
         confirmFunction={handleConfirmRemoveCard} 
       />}
-      {/* contains all alert popups */}
-      <div className="alerts-container">
-        {Object.keys(alerts).map((alertId, i) => <AlertPopup message={alerts[alertId]} key={i} />)}
-      </div>
       {/* main editor */}
       <div className="input-edits-container">
         <input 

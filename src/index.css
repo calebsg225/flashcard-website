@@ -132,7 +132,7 @@ nav .active-nav-button {
   background-color: hsla(0, 0%, 20%, 0.53);
   padding: 5rem;
 }
-.edit-set-container .alerts-container {
+.edit-set-container .alerts-display-container {
   position: fixed;
   inset: auto 0 0 auto;
 }
