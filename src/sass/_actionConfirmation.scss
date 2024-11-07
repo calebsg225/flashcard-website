@@ -8,24 +8,24 @@
   z-index: 1000;
 
   .action-confirmation-interface {
-    min-width: 35rem;
+    width: min(30rem, 85%);
     padding: $pm-600 $pm-500;
-    border: solid $pm-100 $prim-800;
+    border: solid 2px $grey-700;
     border-radius: $pm-500;
-    background-color: $grey-100;
+    background-color: white;
     h3 {
       margin: 0;
       padding: 0 $pm-300;
-      font-weight: 600;
+      font-weight: 800;
       font-size: $fs-400;
-      color: $prim-800;
+      color: $grey-700;
     }
     p {
       margin: 0;
       padding: $pm-300;
       font-weight: 600;
-      font-size: $fs-300;
-      color: $prim-700;
+      font-size: $fs-200;
+      color: $grey-500;
     }
     div {
       display: flex;
@@ -35,34 +35,33 @@
 
       button {
         cursor: pointer;
-        padding: $pm-300 $pm-500;
-        border: none;
-        border-radius: $pm-300;
+        padding: $pm-200 $pm-400;
+        border-radius: $pm-200;
         font-weight: 700;
-        font-size: $fs-200;
+        font-size: $fs-250;
         margin: auto $pm-200;
         border-style: solid;
         border-width: 2px;
+        transition: border-color $tt-100, background-color $tt-100, color $tt-100;
       }
 
       .cancel-button {
-        border-color: $prim-900;
-        background-color: $prim-100;
-        color: $prim-900;
+        border-color: $grey-900;
+        color: $grey-900;
         &:hover {
           border-color: $prim-700;
-          background-color: $prim-300;
+          background-color: $prim-100;
           color: $prim-700;
         }
       }
       .confirm-button {
-        border-color: $red-900;
-        background-color: $red-100;
-        color: $red-900;
+        border-color: $grey-700;
+        background-color: $grey-700;
+        color: white;
         &:hover {
-          border-color: $red-700;
-          background-color: $red-300;
-          color: $red-700;
+          border-color: $red-600;
+          background-color: $red-600;
+          color: $red-100;
         }
       }
     }
