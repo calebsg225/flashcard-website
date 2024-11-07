@@ -26,15 +26,28 @@ export const StudyInterface = () => {
   }
 
   return (
-    <section className="study-interface-container flex no-select">
-      <div className="card-nav">
-        <button onClick={() => handleLeftClick()}>
-          <img src={leftArrowImage} alt="left_arrow" />
-        </button>
-        <Flashcard term={term} definition={definition} isFlipped={isFlipped} setIsFlipped={setIsFlipped}/>
-        <button onClick={() => {handleRightClick()}}>
-          <img src={rightArrowImage} alt="right_arrow" />
-        </button>
+    <section className="study-interface-container">
+      <div className="current-set-card-nav flex no-select">
+        <div className="card-nav">
+          <button onClick={() => handleLeftClick()}>
+            <img src={leftArrowImage} alt="left_arrow" />
+          </button>
+          <Flashcard 
+            term={term} 
+            definition={definition} 
+            currentCard={currentCard+1} 
+            cardCount={cardIds.length} 
+            isFlipped={isFlipped} 
+            setIsFlipped={setIsFlipped}
+          />
+          <button onClick={() => {handleRightClick()}}>
+            <img src={rightArrowImage} alt="right_arrow" />
+          </button>
+        </div>
+      </div>
+      <div className="current-set-data">
+        <h2>{currentSet.title}</h2>
+        <h3>{currentSet.description}</h3>
       </div>
     </section>
   );

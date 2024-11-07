@@ -1,50 +1,68 @@
 .study-interface-container {
   max-width: $max-total-width;
   margin: 2rem auto;
-  padding: 1rem;
-  background-color: $prim-900;
-  flex-direction: column;
-  border-radius: 2rem;
+  padding: $pm-500;
 
-  .card-nav {
-    width: 100%;
-    display: grid;
-    grid-template: 
-            "flash flash"
-            "left right"
-    ;
-    gap: 1rem;
-    margin: 1rem;
-    button {
-      cursor: pointer;
-      background-color: $prim-100;
-      border: none;
-      border-radius: 1rem;
-      img {
-        width: 30%;
-      }
+  .current-set-data {
+    box-shadow: $box-shadow-grey;
+    border-radius: $pm-400;
+    padding: $pm-600;
+    margin-top: $pm-700;
+    h2 {
+      margin: 0 auto $pm-300;
+      font-size: $fs-300;
     }
-    &:first-child {
-      grid-area: left;
-    }
-    &:last-child {
-      grid-area: right;
-    }
-    .flashcard {
-      grid-area: flash;
+    h3 {
+      margin: 0;
+      font-size: $fs-200;
     }
   }
+
+  .current-set-card-nav {
+    box-shadow: $box-shadow-grey;
+    border-radius: $pm-400;
+    .card-nav {
+      width: 100%;
+      display: grid;
+      grid-template: 
+              "flash flash"
+              "left right"
+      ;
+      gap: $pm-300;
+      margin: $pm-300;
+      button {
+        cursor: pointer;
+        border: none;
+        border-radius: $pm-300;
+        img {
+          width: 30%;
+        }
+      }
+      &:first-child {
+        grid-area: left;
+      }
+      &:last-child {
+        grid-area: right;
+      }
+      .flashcard {
+        grid-area: flash;
+      }
+    }
+  }
+
 }
 
 @include breakpoint(sm) {
   .study-interface-container {
-    .card-nav {
-      grid-template: 
-        "left flash right" auto / 10% 1fr 10%
-      ;
-      button {
-        img {
-          width: 100%;
+    .current-set-card-nav {
+      .card-nav {
+        grid-template: 
+          "left flash right" auto / 10% 1fr 10%
+        ;
+        button {
+          img {
+            width: 100%;
+          }
         }
       }
     }

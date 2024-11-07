@@ -54,42 +54,56 @@ nav .active-nav-button {
 .study-interface-container {
   max-width: 55rem;
   margin: 2rem auto;
-  padding: 1rem;
-  background-color: hsl(286, 100%, 12%);
-  flex-direction: column;
-  border-radius: 2rem;
+  padding: 1.6rem;
 }
-.study-interface-container .card-nav {
+.study-interface-container .current-set-data {
+  box-shadow: 0 0 15px -7px hsl(284, 8%, 27%);
+  border-radius: 1.2rem;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+.study-interface-container .current-set-data h2 {
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+}
+.study-interface-container .current-set-data h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+.study-interface-container .current-set-card-nav {
+  box-shadow: 0 0 15px -7px hsl(284, 8%, 27%);
+  border-radius: 1.2rem;
+}
+.study-interface-container .current-set-card-nav .card-nav {
   width: 100%;
   display: grid;
   grid-template: "flash flash" "left right";
   gap: 1rem;
   margin: 1rem;
 }
-.study-interface-container .card-nav button {
+.study-interface-container .current-set-card-nav .card-nav button {
   cursor: pointer;
-  background-color: hsl(287, 100%, 96%);
   border: none;
   border-radius: 1rem;
 }
-.study-interface-container .card-nav button img {
+.study-interface-container .current-set-card-nav .card-nav button img {
   width: 30%;
 }
-.study-interface-container .card-nav:first-child {
+.study-interface-container .current-set-card-nav .card-nav:first-child {
   grid-area: left;
 }
-.study-interface-container .card-nav:last-child {
+.study-interface-container .current-set-card-nav .card-nav:last-child {
   grid-area: right;
 }
-.study-interface-container .card-nav .flashcard {
+.study-interface-container .current-set-card-nav .card-nav .flashcard {
   grid-area: flash;
 }
 
 @media (min-width: 700px) {
-  .study-interface-container .card-nav {
+  .study-interface-container .current-set-card-nav .card-nav {
     grid-template: "left flash right" auto/10% 1fr 10%;
   }
-  .study-interface-container .card-nav button img {
+  .study-interface-container .current-set-card-nav .card-nav button img {
     width: 100%;
   }
 }
@@ -183,7 +197,7 @@ nav .active-nav-button {
 .flashcard {
   position: relative;
   cursor: pointer;
-  background-color: hsl(287, 100%, 96%);
+  background-color: white;
   color: hsl(286, 100%, 12%);
   aspect-ratio: 5/3;
   padding: 1rem;
@@ -199,7 +213,7 @@ nav .active-nav-button {
 .flashcard .flashcard-label {
   position: absolute;
   inset: -6px auto auto auto;
-  width: 8rem;
+  padding: 0 0.6rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   font-size: 1rem;
@@ -343,7 +357,7 @@ nav .active-nav-button {
   box-shadow: 0 0 15px -7px hsl(284, 8%, 27%);
 }
 .set-can-be-studied:hover {
-  box-shadow: 0 0 20px -5px hsl(286, 100%, 50%);
+  box-shadow: 0 0 25px -7px hsl(286, 100%, 27%);
 }
 .set-can-be-studied .edit-button:hover {
   border-color: hsl(286, 100%, 38%);
@@ -357,7 +371,7 @@ nav .active-nav-button {
 }
 
 .set-cannot-be-studied {
-  box-shadow: 0 0 15px -7px hsl(0, 100%, 34%);
+  box-shadow: 0 0 20px -7px hsl(0, 100%, 34%);
 }
 .set-cannot-be-studied .set-preview-buttons p {
   color: hsl(0, 76%, 62%);

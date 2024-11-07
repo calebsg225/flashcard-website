@@ -58,9 +58,9 @@
 
 .set-can-be-studied {
   cursor: pointer;
-  box-shadow: 0 0 15px -7px $grey-700;
+  box-shadow: $box-shadow-grey;
   &:hover {
-    box-shadow: 0 0 20px -5px $prim-500;
+    box-shadow: $box-shadow-prim;
   }
 
   .edit-button {
@@ -81,7 +81,7 @@
 }
 
 .set-cannot-be-studied {
-  box-shadow: 0 0 15px -7px $red-500;
+  box-shadow: $box-shadow-red;
   .set-preview-buttons {
     p {
       color: $red-300;

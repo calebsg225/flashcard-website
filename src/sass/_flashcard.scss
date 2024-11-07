@@ -1,7 +1,7 @@
 .flashcard {
   position: relative;
   cursor: pointer;
-  background-color: $prim-100;
+  background-color: white;
   color: $prim-900;
   aspect-ratio: 5/3;
   padding: 1rem;
@@ -17,7 +17,7 @@
   .flashcard-label {
     position: absolute;
     inset: -$flashcard-border-thickness auto auto auto;
-    width: 8rem;
+    padding: 0 $pm-200;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     font-size: $fs-200;
