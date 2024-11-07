@@ -113,6 +113,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
           className="edit-title" 
           name="title" 
           placeholder="Set Title..." 
+          maxLength={50}
           onChange={(e) => handleChangeSetData(e)} 
           type="text" 
           defaultValue={newSetData.title}
@@ -121,6 +122,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
           className="edit-description" 
           name="description" 
           placeholder="Set Description..." 
+          maxLength={200}
           onChange={(e) => handleChangeSetData(e)} 
           type="text" 
           defaultValue={newSetData.description}

@@ -11,7 +11,6 @@
 
 body {
   font-family: "Nunito";
-  background-color: hsl(286, 100%, 93%);
   position: absolute;
   inset: 0;
   margin: 0;
@@ -37,7 +36,7 @@ nav div {
 }
 nav div button {
   padding: 0.4rem 1rem;
-  color: hsl(286, 100%, 93%);
+  color: hsl(287, 100%, 96%);
   cursor: pointer;
   background-color: hsla(0, 0%, 100%, 0);
   font-size: 2rem;
@@ -49,7 +48,7 @@ nav div button:hover {
   color: hsl(286, 100%, 76%);
 }
 nav .active-nav-button {
-  border-bottom: hsl(286, 100%, 93%) solid 2px;
+  border-bottom: hsl(287, 100%, 96%) solid 2px;
 }
 
 .study-interface-container {
@@ -69,7 +68,7 @@ nav .active-nav-button {
 }
 .study-interface-container .card-nav button {
   cursor: pointer;
-  background-color: hsl(286, 100%, 93%);
+  background-color: hsl(287, 100%, 96%);
   border: none;
   border-radius: 1rem;
 }
@@ -95,34 +94,32 @@ nav .active-nav-button {
   }
 }
 .manage-interface-container {
-  background-color: blue;
-  padding: 2rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
+  padding: 1.2rem;
 }
-.manage-interface-container .set-preview-container {
-  background-color: red;
+.manage-interface-container .set-previews-container {
+  padding: 2rem;
+  display: column;
+  gap: 3rem;
 }
 
 @media (min-width: 700px) {
-  .manage-interface-container {
-    grid-template-columns: 1fr 1fr;
+  .set-previews-container {
+    columns: 1;
   }
 }
 @media (min-width: 1000px) {
-  .manage-interface-container {
-    grid-template-columns: 1fr 1fr 1fr;
+  .set-previews-container {
+    columns: 2;
   }
 }
 @media (min-width: 1400px) {
-  .manage-interface-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  .set-previews-container {
+    columns: 3;
   }
 }
 @media (min-width: 1800px) {
-  .manage-interface-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  .set-previews-container {
+    columns: 4;
   }
 }
 .edit-set-container {
@@ -186,7 +183,7 @@ nav .active-nav-button {
 .flashcard {
   position: relative;
   cursor: pointer;
-  background-color: hsl(286, 100%, 93%);
+  background-color: hsl(287, 100%, 96%);
   color: hsl(286, 100%, 12%);
   aspect-ratio: 5/3;
   padding: 1rem;
@@ -273,7 +270,7 @@ nav .active-nav-button {
 }
 .action-confirmation .action-confirmation-interface div .cancel-button {
   border-color: hsl(286, 100%, 12%);
-  background-color: hsl(286, 100%, 93%);
+  background-color: hsl(287, 100%, 96%);
   color: hsl(286, 100%, 12%);
 }
 .action-confirmation .action-confirmation-interface div .cancel-button:hover {
@@ -290,6 +287,68 @@ nav .active-nav-button {
   border-color: hsl(0, 100%, 16%);
   background-color: hsl(0, 76%, 62%);
   color: hsl(0, 100%, 16%);
+}
+
+.set-preview-container {
+  cursor: pointer;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  box-shadow: 0 0 15px -7px hsl(284, 8%, 27%);
+  transition: box-shadow 0.1s, background-color 0.1s;
+  break-inside: avoid;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.set-preview-container h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+.set-preview-container h3 {
+  margin: 0;
+  color: hsl(287, 8%, 44%);
+}
+.set-preview-container .set-preview-buttons {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+}
+.set-preview-container .set-preview-buttons p {
+  margin: 0;
+  color: hsl(286, 16%, 69%);
+  font-size: 1.25rem;
+}
+.set-preview-container .set-preview-buttons button {
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  margin: 0 0.6rem;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.set-preview-container .set-preview-buttons .edit-button {
+  border: solid 2px hsl(284, 8%, 27%);
+  color: hsl(284, 8%, 27%);
+}
+.set-preview-container .set-preview-buttons .edit-button:hover {
+  border-color: hsl(286, 100%, 38%);
+  color: hsl(286, 100%, 38%);
+  background-color: hsl(287, 100%, 96%);
+}
+.set-preview-container .set-preview-buttons .delete-button {
+  border: solid 2px hsl(284, 8%, 27%);
+  color: white;
+  background-color: hsl(284, 8%, 27%);
+}
+.set-preview-container .set-preview-buttons .delete-button:hover {
+  border-color: hsl(286, 100%, 38%);
+  color: hsl(287, 100%, 96%);
+  background-color: hsl(286, 100%, 38%);
+}
+.set-preview-container:hover {
+  box-shadow: 0 0 20px -5px hsl(286, 100%, 50%);
 }
 
 /*# sourceMappingURL=index.css.map */

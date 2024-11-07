@@ -1,0 +1,76 @@
+.set-preview-container {
+  cursor: pointer;
+  border-radius: $pm-400;
+  padding: $pm-600;
+  box-shadow: 0 0 15px -7px $grey-700;
+  transition: box-shadow .1s, background-color .1s;
+
+  break-inside: avoid;
+  margin-bottom: $pm-700;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h2 {
+    margin: 0;
+    font-size: $fs-400;
+  }
+
+  h3 {
+    margin: 0;
+    color: $grey-500;
+  }
+
+  .set-preview-buttons {
+    margin-top: $pm-300;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    p {
+      margin: 0;
+      color: $grey-300;
+      font-size: $fs-250;
+    }
+
+    button {
+      cursor: pointer;
+      padding: $pm-200 $pm-300;
+      margin: 0 $pm-200;
+      border-radius: $pm-200;
+      font-size: $fs-200;
+      font-weight: 700;
+    }
+
+    .edit-button {
+      border: solid 2px $grey-700;
+      color: $grey-700;
+
+      &:hover {
+        border-color: $prim-600;
+        color: $prim-600;
+        background-color: $prim-100;
+      }
+    }
+
+    .delete-button {
+      border: solid 2px $grey-700;
+      color: white;
+      background-color: $grey-700;
+
+      &:hover {
+        border-color: $prim-600;
+        color: $prim-100;
+        background-color: $prim-600;
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 20px -5px $prim-500;
+  }
+}
+
+.greyed-out {
+  
+}

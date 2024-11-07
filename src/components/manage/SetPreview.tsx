@@ -14,7 +14,7 @@ const SetPreview = ({setData, setId, setEditing, setDeleting, setActiveSection}:
   const cardCount = Object.keys(setData.cards).length;
 
   const handleSelectSet = () => {
-    // TODO: verify that the set has at least one card.
+    if (!cardCount) return;
     handleLocalStorage.updateCurrentSet(setId);
     setActiveSection('Study');
   }
@@ -37,9 +37,16 @@ const SetPreview = ({setData, setId, setEditing, setDeleting, setActiveSection}:
     >
       <h2>{setData.title}</h2>
       <h3>{setData.description}</h3>
-      <p>card count: {cardCount}</p>
-      <button onClick={(e) => handleEdit(e)}>edit</button>
-      <button onClick={(e) => handleDelete(e)}>delete</button>
+      <div className="set-preview-buttons">
+        <p
+          style={{
+            color: `${cardCount ? "" : "red"}`,
+            fontWeight: `${cardCount ? "" : "700"}`
+          }}
+        >{cardCount + " card" + (cardCount === 1 ? "" : "s")}</p>
+        <button className="edit-button" onClick={(e) => handleEdit(e)}>Edit</button>
+        <button className="delete-button" onClick={(e) => handleDelete(e)}>Delete</button>
+      </div>
     </div>
   )
 }

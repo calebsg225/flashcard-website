@@ -1,35 +1,39 @@
 .manage-interface-container {
-  background-color: blue;
-  padding: 2rem;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr;
-
-  .set-preview-container {
-    background-color: red;
+  padding: $pm-400;
+  
+  .set-previews-container {
+    padding: $pm-600;
+    display: column;
+    gap: $pm-700;
   }
 }
 
 @include breakpoint(sm) {
-  .manage-interface-container {
-    grid-template-columns: 1fr 1fr;
+  .set-previews-container {
+    //grid-template-columns: repeat(1, 1fr);
+    columns: 1;
   }
 }
 
 @include breakpoint(md) {
-  .manage-interface-container {
-    grid-template-columns: 1fr 1fr 1fr;
+  .set-previews-container {
+    //grid-template-columns: repeat(2, 1fr);
+    columns: 2;
   }
 }
 
 @include breakpoint(xl) {
-  .manage-interface-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  .set-previews-container {
+    //grid-template-columns: repeat(3, 1fr);
+    columns: 3;
+
   }
 }
 
 @include breakpoint(xxl) {
-  .manage-interface-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  .set-previews-container {
+    //grid-template-columns: repeat(4, 1fr);
+    columns: 4;
+
   }
 }

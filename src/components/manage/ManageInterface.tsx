@@ -45,9 +45,9 @@ export const ManageInterface = ({setActiveSection}: ManageInterfaceProps) => {
         cancelFunction={handleCancelDeleteSet} 
         confirmFunction={handleDeleteSet}
       />}
-      <div>
+      <div className="set-previews-container">
         {setsKeys.length ? (
-          <div>
+          <>
             {setsKeys.map((setId, i) => <SetPreview 
               setData={setsData[setId]} 
               setId={setId} 
@@ -56,7 +56,7 @@ export const ManageInterface = ({setActiveSection}: ManageInterfaceProps) => {
               setActiveSection={setActiveSection} 
               key={i} 
             />)}
-          </div>
+          </>
         ) : (
           <button onClick={() => handleCreateSet()}>Create New Set</button>
         )}
