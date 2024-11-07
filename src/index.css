@@ -280,7 +280,7 @@ nav .active-nav-button {
 }
 .action-confirmation .action-confirmation-interface div .confirm-button {
   border-color: hsl(0, 86%, 9%);
-  background-color: hsl(0, 93%, 83%);
+  background-color: hsl(0, 100%, 92%);
   color: hsl(0, 86%, 9%);
 }
 .action-confirmation .action-confirmation-interface div .confirm-button:hover {
@@ -290,10 +290,8 @@ nav .active-nav-button {
 }
 
 .set-preview-container {
-  cursor: pointer;
   border-radius: 1.2rem;
-  padding: 2rem;
-  box-shadow: 0 0 15px -7px hsl(284, 8%, 27%);
+  padding: 3rem;
   transition: box-shadow 0.1s, background-color 0.1s;
   break-inside: avoid;
   margin-bottom: 3rem;
@@ -303,10 +301,12 @@ nav .active-nav-button {
 }
 .set-preview-container h2 {
   margin: 0;
+  margin-bottom: 1rem;
   font-size: 2rem;
 }
 .set-preview-container h3 {
   margin: 0;
+  line-height: 2rem;
   color: hsl(287, 8%, 44%);
 }
 .set-preview-container .set-preview-buttons {
@@ -327,28 +327,53 @@ nav .active-nav-button {
   border-radius: 0.6rem;
   font-size: 1rem;
   font-weight: 700;
+  transition: border-color 0.1s, background-color 0.1s, color 0.1s;
 }
 .set-preview-container .set-preview-buttons .edit-button {
   border: solid 2px hsl(284, 8%, 27%);
   color: hsl(284, 8%, 27%);
-}
-.set-preview-container .set-preview-buttons .edit-button:hover {
-  border-color: hsl(286, 100%, 38%);
-  color: hsl(286, 100%, 38%);
-  background-color: hsl(287, 100%, 96%);
 }
 .set-preview-container .set-preview-buttons .delete-button {
   border: solid 2px hsl(284, 8%, 27%);
   color: white;
   background-color: hsl(284, 8%, 27%);
 }
-.set-preview-container .set-preview-buttons .delete-button:hover {
+
+.set-can-be-studied {
+  cursor: pointer;
+  box-shadow: 0 0 15px -7px hsl(284, 8%, 27%);
+}
+.set-can-be-studied:hover {
+  box-shadow: 0 0 20px -5px hsl(286, 100%, 50%);
+}
+.set-can-be-studied .edit-button:hover {
+  border-color: hsl(286, 100%, 38%);
+  color: hsl(286, 100%, 38%);
+  background-color: hsl(287, 100%, 96%);
+}
+.set-can-be-studied .delete-button:hover {
   border-color: hsl(286, 100%, 38%);
   color: hsl(287, 100%, 96%);
   background-color: hsl(286, 100%, 38%);
 }
-.set-preview-container:hover {
-  box-shadow: 0 0 20px -5px hsl(286, 100%, 50%);
+
+.set-cannot-be-studied {
+  box-shadow: 0 0 15px -7px hsl(0, 100%, 34%);
+}
+.set-cannot-be-studied .set-preview-buttons p {
+  color: hsl(0, 76%, 62%);
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+.set-cannot-be-studied .set-preview-buttons .edit-button:hover {
+  border-color: hsl(0, 100%, 24%);
+  color: hsl(0, 100%, 24%);
+  background-color: hsl(0, 100%, 92%);
+}
+.set-cannot-be-studied .set-preview-buttons .delete-button:hover {
+  border-color: hsl(0, 100%, 24%);
+  color: hsl(0, 100%, 92%);
+  background-color: hsl(0, 100%, 24%);
 }
 
 /*# sourceMappingURL=index.css.map */

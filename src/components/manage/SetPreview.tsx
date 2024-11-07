@@ -32,18 +32,13 @@ const SetPreview = ({setData, setId, setEditing, setDeleting, setActiveSection}:
   // TODO: display some sort of icon indicating which set is stored as the current set
   return (
     <div 
-      className={`set-preview-container ${cardCount ? '' : 'greyed-out'}`}
+      className={`set-preview-container set-can${cardCount ? '' : 'not'}-be-studied`}
       onClick={() => handleSelectSet()}
     >
       <h2>{setData.title}</h2>
       <h3>{setData.description}</h3>
       <div className="set-preview-buttons">
-        <p
-          style={{
-            color: `${cardCount ? "" : "red"}`,
-            fontWeight: `${cardCount ? "" : "700"}`
-          }}
-        >{cardCount + " card" + (cardCount === 1 ? "" : "s")}</p>
+        <p>{cardCount + " card" + (cardCount === 1 ? "" : "s")}</p>
         <button className="edit-button" onClick={(e) => handleEdit(e)}>Edit</button>
         <button className="delete-button" onClick={(e) => handleDelete(e)}>Delete</button>
       </div>

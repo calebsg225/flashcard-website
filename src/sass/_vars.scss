@@ -25,7 +25,8 @@ $red-700: hsl(0, 100%, 16%);
 $red-600: hsl(0, 100%, 24%);
 $red-500: hsl(0, 100%, 34%);
 $red-300: hsl(0, 76%, 62%);
-$red-100: hsl(0, 93%, 83%);
+$red-200: hsl(0, 100%, 75%);
+$red-100: hsl(0, 100%, 92%);
 
 // font sizes
 $fs-700: 8rem;
@@ -57,3 +58,9 @@ $max-total-width: 55rem;
 // flashcard border thickness
 $flashcard-border-thickness: 6px;
 
+// transition time
+$tt-900: .9s;
+$tt-700: .7s;
+$tt-500: .5s;
+$tt-300: .3s;
+$tt-100: .1s;
