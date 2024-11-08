@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Flashcard from "../Flashcard";
 import handleLocalStorage from "../../data/handleLocalStorage";
 
@@ -9,20 +9,26 @@ export const StudyInterface = () => {
   const [ isFlipped, setIsFlipped ] = useState(false);
   const [ currentCard, setCurrentCard ] = useState(0);
 
+  const currentSet = handleLocalStorage.retrieveCurrentSetData();
+
+  const [ cardIds, setCardIds ] = useState<string[]>(Object.keys(currentSet.cards));
+
   // Fisher-Yates shuffle
   const shuffleCards = (cardIds: string[]): string[] => {
     for (let i = cardIds.length - 1; i >= 0; i--) {
       const rand = Math.floor(Math.random() * i);
       [ cardIds[i], cardIds[rand] ] = [ cardIds[rand], cardIds[i] ];
     }
-    console.log(cardIds);
     return cardIds;
   }
 
-  const currentSet = handleLocalStorage.retrieveCurrentSetData();
-  const cardIds = shuffleCards(Object.keys(currentSet.cards));
+  // useEffect prevents reshuffling when other states change (card flipping and changing)
+  useEffect(() => {
+    setCardIds(shuffleCards(Object.keys(currentSet.cards)));
+  }, []);
+  
   const { term, definition } = currentSet.cards[cardIds[currentCard]];
-
+  
   const handleLeftClick = () => {
     if ( !currentCard ) { setCurrentCard(cardIds.length - 1) }
     else { setCurrentCard(currentCard - 1) }
