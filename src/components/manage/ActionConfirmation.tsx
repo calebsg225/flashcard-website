@@ -16,9 +16,14 @@ const ActionConfirmation = ({title, message, confirmName, cancelFunction, confir
     confirmFunction();
   }
 
+  // prevent clicking on the action-confirmation-interface div from canceling the action when clicking the action-confirmation
+  const preventPropagation = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.stopPropagation();
+  }
+
   return (
-    <div className="action-confirmation">
-      <div className="action-confirmation-interface">
+    <div className="action-confirmation" onClick={() => handleCancel()}>
+      <div className="action-confirmation-interface" onClick={(e) => {preventPropagation(e)}}>
         <h3>{title}</h3>
         <p>{message}</p>
         <div>
