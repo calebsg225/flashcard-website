@@ -2,6 +2,7 @@ import { useState } from "react";
 import handleLocalStorage from "../../data/handleLocalStorage";
 import { SetData } from "../../types/setDataTypes"
 import ActionConfirmation from "./ActionConfirmation";
+import EditCard from "./EditCard";
 
 // pop-up that shows up when editing a set
 interface EditSetProps {
@@ -129,30 +130,19 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
         />
         <div className="edit-cards-container">
           {Object.keys(newSetData.cards).map((cardId, i) => (
-            <div className="edit-card-container" key={i}>
-              <textarea
-                className="edit-card-term" 
-                name="term" 
-                placeholder="Card Term..."
-                onChange={(e) => handleEditCard(e, cardId)}
-                defaultValue={newSetData.cards[cardId].term} 
-                data-enable-grammarly="false"
-              />
-              <button className="card-expand">Expand</button>
-              <button onClick={() => handleRemoveCard(cardId)} className="card-delete">Remove</button>
-              <textarea
-                className="edit-card-definition" 
-                name="definition" 
-                placeholder="Card Description..."
-                onChange={(e) => handleEditCard(e, cardId)}
-                defaultValue={newSetData.cards[cardId].definition} 
-                data-enable-grammarly="false"
-              />
-            </div>
+            <EditCard
+              handleEditCard={handleEditCard} 
+              handleRemoveCard={handleRemoveCard} 
+              cardId={cardId}
+              cardTerm={newSetData.cards[cardId].term}
+              cardDefinition={newSetData.cards[cardId].definition} 
+              key={i}
+            />
           ))}
           <button onClick={() => handleAddCard()} className="add-card">Add New Card</button>
         </div>
         <div className="confirmation-interface">
+          {/* TODO: have action confirmation window here */}
           <button className="cancel-button" onClick={() => {handleOnCancelEdits()}}>Cancel</button>
           <button className="save-button" onClick={() => {handleOnSaveEdits()}}>Save</button>
         </div>

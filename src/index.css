@@ -16,6 +16,10 @@ body {
   margin: 0;
 }
 
+button {
+  font-family: inherit;
+}
+
 #root {
   position: absolute;
   inset: 0;
@@ -140,53 +144,21 @@ nav .active-nav-button {
   position: fixed;
   inset: 0;
   z-index: 100;
-  background-color: hsla(0, 0%, 20%, 0.53);
-  padding: 5rem;
+  background-color: black;
+  height: 100vh;
 }
 .edit-set-container .alerts-display-container {
   position: fixed;
   inset: auto 0 0 auto;
 }
 .edit-set-container .input-edits-container {
-  background-color: rgb(184, 184, 184);
   padding: 3rem;
-  border-radius: 2rem;
   display: flex;
   flex-direction: column;
 }
-.edit-set-container .input-edits-container .edit-cards-container {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.edit-set-container .input-edits-container .edit-cards-container .edit-card-container {
-  width: 100%;
-  padding: 0.2rem 0;
-  display: grid;
-  grid-template: "term expand definition" "term delete definition"/1fr auto 1fr;
-}
-.edit-set-container .input-edits-container .edit-cards-container .edit-card-container textarea {
-  resize: none;
-}
-.edit-set-container .input-edits-container .edit-cards-container .edit-card-container .edit-card-term {
-  grid-area: term;
-}
-.edit-set-container .input-edits-container .edit-cards-container .edit-card-container .edit-card-definition {
-  grid-area: definition;
-}
-.edit-set-container .input-edits-container .edit-cards-container .edit-card-container button {
-  width: 6rem;
-}
-.edit-set-container .input-edits-container .edit-cards-container .edit-card-container .card-expand {
-  grid-area: expand;
-}
-.edit-set-container .input-edits-container .edit-cards-container .edit-card-container .card-delete {
-  grid-area: delete;
-}
-.edit-set-container .input-edits-container .edit-cards-container .add-card {
-  margin: 1rem;
-  padding: 0.5rem 1rem;
+.edit-set-container .input-edits-container input {
+  font-size: 1.6rem;
+  font-family: inherit;
 }
 .edit-set-container .input-edits-container .confirmation-interface {
   display: flex;
@@ -194,6 +166,31 @@ nav .active-nav-button {
   justify-content: flex-end;
 }
 
+@media (min-width: 500px) {
+  .edit-set-container .input-edits-container .edit-cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (min-width: 700px) {
+  .edit-set-container .input-edits-container .edit-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1000px) {
+  .edit-set-container .input-edits-container .edit-cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1400px) {
+  .edit-set-container .input-edits-container .edit-cards-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1800px) {
+  .edit-set-container .input-edits-container .edit-cards-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 .flashcard {
   position: relative;
   cursor: pointer;
@@ -387,6 +384,32 @@ nav .active-nav-button {
   border-color: hsl(0, 100%, 24%);
   color: hsl(0, 100%, 92%);
   background-color: hsl(0, 100%, 24%);
+}
+
+.edit-cards-container {
+  padding: 1.2rem 0;
+  display: grid;
+  gap: 1rem;
+  overflow-Y: scroll;
+}
+.edit-cards-container::-webkit-scrollbar {
+  display: none;
+}
+.edit-cards-container .edit-card-container {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.edit-cards-container .edit-card-container textarea {
+  resize: none;
+  width: 100%;
+  font-family: inherit;
+}
+.edit-cards-container .add-card {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 /*# sourceMappingURL=index.css.map */
