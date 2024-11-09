@@ -1,37 +1,24 @@
-.edit-cards-container {
-  padding: $pm-400 0;
-  display: grid;
-  gap: $pm-300;
-  overflow-Y: scroll;
-  &::-webkit-scrollbar {
-    display: none;
+.edit-card-container {
+  background-color: white;
+  padding: $pm-300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  textarea {
+    resize: none;
+    width: 100%;
+    font-family: inherit;
   }
-  .edit-card-container {
-    background-color: white;
-    padding: $pm-300;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    textarea {
-      resize: none;
-      width: 100%;
-      font-family: inherit;
-    }
-    .edit-card-term {
-    }
-    .edit-card-definition {
-    }
-    div {
-      button {
-      }
-      .card-expand {
-      }
-      .card-delete {
-      }
-    }
+  .edit-card-term {
   }
-  .add-card {
-    margin: 1rem;
-    padding: .5rem 1rem;
+  .edit-card-definition {
+  }
+  div {
+    button {
+    }
+    .card-expand {
+    }
+    .card-delete {
+    }
   }
 }
