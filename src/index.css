@@ -119,25 +119,45 @@ nav .active-nav-button {
   display: column;
   gap: 3rem;
 }
+.manage-interface-container .set-previews-container .create-set-button {
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+  border: none;
+  aspect-ratio: 1.6/1;
+  font-size: 8rem;
+  color: hsl(284, 8%, 27%);
+  border-radius: 1.2rem;
+  transition: background-color 0.1s, color 0.1s;
+}
+.manage-interface-container .set-previews-container .create-set-button:hover {
+  background-color: hsl(287, 100%, 96%);
+  color: hsl(286, 100%, 38%);
+}
 
-@media (min-width: 700px) {
+@media (min-width: 500px) {
   .set-previews-container {
     columns: 1;
   }
 }
-@media (min-width: 1000px) {
+@media (min-width: 700px) {
   .set-previews-container {
     columns: 2;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1000px) {
   .set-previews-container {
     columns: 3;
   }
 }
-@media (min-width: 1800px) {
+@media (min-width: 1400px) {
   .set-previews-container {
     columns: 4;
+  }
+}
+@media (min-width: 1800px) {
+  .set-previews-container {
+    columns: 5;
   }
 }
 .edit-set-container {

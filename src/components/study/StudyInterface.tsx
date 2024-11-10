@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Flashcard from "../Flashcard";
+import Flashcard from "./Flashcard";
 import handleLocalStorage from "../../data/handleLocalStorage";
 
 import leftArrowImage from '../../assets/left-arrow.png';

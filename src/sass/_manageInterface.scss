@@ -5,35 +5,52 @@
     padding: $pm-600;
     display: column;
     gap: $pm-700;
+    .create-set-button {
+      cursor: pointer;
+      padding: 0;
+      width: 100%;
+      border: none;
+      aspect-ratio: 1.6/1;
+      font-size: $fs-700;
+      color: $grey-700;
+      border-radius: $pm-400;
+      transition: background-color $tt-100, color $tt-100;
+      &:hover {
+        background-color: $prim-100;
+        color: $prim-600;
+      }
+    }
+  }
+}
+
+@include breakpoint(xs) {
+  .set-previews-container {
+    columns: 1;
   }
 }
 
 @include breakpoint(sm) {
   .set-previews-container {
-    //grid-template-columns: repeat(1, 1fr);
-    columns: 1;
+    columns: 2;
   }
 }
 
 @include breakpoint(md) {
   .set-previews-container {
-    //grid-template-columns: repeat(2, 1fr);
-    columns: 2;
+    columns: 3;
   }
 }
 
 @include breakpoint(xl) {
   .set-previews-container {
-    //grid-template-columns: repeat(3, 1fr);
-    columns: 3;
+    columns: 4;
 
   }
 }
 
 @include breakpoint(xxl) {
   .set-previews-container {
-    //grid-template-columns: repeat(4, 1fr);
-    columns: 4;
+    columns: 5;
 
   }
 }
