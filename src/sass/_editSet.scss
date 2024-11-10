@@ -24,6 +24,7 @@
       gap: $pm-500;
       overflow-Y: scroll;
       max-height: calc(100vh - 400px);
+      transition: border-color $tt-100;
       &::-webkit-scrollbar {
         display: none;
       }
@@ -39,6 +40,9 @@
           color: $prim-600;
         }
       }
+      &:hover {
+        border-color: $prim-500;
+      }
     }
 
     input {
@@ -48,7 +52,9 @@
       padding: $pm-200;
       font-size: $pm-500;
       font-family: inherit;
+      outline-color: $prim-500;
     }
+
     .confirmation-interface {
       pointer-events: none;
       padding: $pm-300;
@@ -70,7 +76,7 @@
       }
 
       .cancel-button {
-        color: $red-700;
+        color: $red-500;
         border: solid $pm-100 $red-500;
         background-color: $red-100;
         &:hover {

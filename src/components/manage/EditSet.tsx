@@ -118,6 +118,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
           onChange={(e) => handleChangeSetData(e)} 
           type="text" 
           defaultValue={newSetData.title}
+          spellCheck="false"
         />
         <input 
           className="edit-description" 
@@ -127,6 +128,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
           onChange={(e) => handleChangeSetData(e)} 
           type="text" 
           defaultValue={newSetData.description}
+          spellCheck="false"
         />
         <div className="edit-cards-container">
           {Object.keys(newSetData.cards).map((cardId, i) => (

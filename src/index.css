@@ -185,6 +185,7 @@ nav .active-nav-button {
   gap: 1.6rem;
   overflow-Y: scroll;
   max-height: calc(100vh - 400px);
+  transition: border-color 0.1s;
 }
 .edit-set-container .input-edits-container .edit-cards-container::-webkit-scrollbar {
   display: none;
@@ -201,6 +202,9 @@ nav .active-nav-button {
   background-color: hsl(287, 100%, 96%);
   color: hsl(286, 100%, 38%);
 }
+.edit-set-container .input-edits-container .edit-cards-container:hover {
+  border-color: hsl(286, 100%, 50%);
+}
 .edit-set-container .input-edits-container input {
   border: solid 0.2rem hsl(287, 8%, 44%);
   border-radius: 1rem;
@@ -208,6 +212,7 @@ nav .active-nav-button {
   padding: 0.6rem;
   font-size: 1.6rem;
   font-family: inherit;
+  outline-color: hsl(286, 100%, 50%);
 }
 .edit-set-container .input-edits-container .confirmation-interface {
   pointer-events: none;
@@ -230,7 +235,7 @@ nav .active-nav-button {
   transition: background-color 0.1s, color 0.1s;
 }
 .edit-set-container .input-edits-container .confirmation-interface .cancel-button {
-  color: hsl(0, 100%, 16%);
+  color: hsl(0, 100%, 34%);
   border: solid 0.2rem hsl(0, 100%, 34%);
   background-color: hsl(0, 100%, 92%);
 }
@@ -485,9 +490,37 @@ nav .active-nav-button {
   border-radius: 0.6rem;
   padding: 0.6rem;
   margin-bottom: 0.6rem;
+  outline-color: hsl(286, 100%, 50%);
 }
 .edit-card-container textarea::-webkit-scrollbar {
   display: none;
+}
+.edit-card-container div button {
+  cursor: pointer;
+  border: solid 0.1rem hsl(284, 8%, 27%);
+  border-radius: 0.6rem;
+  font-family: inherit;
+  font-size: 1.25rem;
+  padding: 0.2rem 0.6rem;
+  font-weight: 700;
+  margin: 0 0.6rem;
+}
+.edit-card-container div .card-expand {
+  color: hsl(284, 8%, 27%);
+}
+.edit-card-container div .card-expand:hover {
+  border-color: hsl(286, 100%, 27%);
+  background-color: hsl(287, 100%, 96%);
+  color: hsl(286, 100%, 27%);
+}
+.edit-card-container div .card-delete {
+  background-color: hsl(284, 8%, 27%);
+  color: white;
+}
+.edit-card-container div .card-delete:hover {
+  border-color: hsl(0, 100%, 16%);
+  background-color: hsl(0, 100%, 16%);
+  color: hsl(0, 100%, 92%);
 }
 
 /*# sourceMappingURL=index.css.map */

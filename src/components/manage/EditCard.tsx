@@ -19,6 +19,7 @@ const EditCard = ({handleEditCard, handleRemoveCard, cardId, cardTerm, cardDefin
         onChange={(e) => handleEditCard(e, cardId)}
         defaultValue={cardTerm} 
         data-enable-grammarly="false"
+        spellCheck="false"
       />
       <textarea
         className="edit-card-definition" 
@@ -27,6 +28,7 @@ const EditCard = ({handleEditCard, handleRemoveCard, cardId, cardTerm, cardDefin
         onChange={(e) => handleEditCard(e, cardId)}
         defaultValue={cardDefinition} 
         data-enable-grammarly="false"
+        spellCheck="false"
       />
       <div>
         <button className="card-expand">Expand</button>

@@ -16,6 +16,7 @@
     &::-webkit-scrollbar {
       display: none;
     }
+    outline-color: $prim-500;
   }
   .edit-card-term {
   }
@@ -23,10 +24,31 @@
   }
   div {
     button {
+      cursor: pointer;
+      border: solid $pm-50 $grey-700;
+      border-radius: $pm-200;
+      font-family: inherit;
+      font-size: $fs-250;
+      padding: $pm-100 $pm-200;
+      font-weight: 700;
+      margin: 0 $pm-200;
     }
     .card-expand {
+      color: $grey-700;
+      &:hover {
+        border-color: $prim-700;
+        background-color: $prim-100;
+        color: $prim-700;
+      }
     }
     .card-delete {
+      background-color: $grey-700;
+      color: white;
+      &:hover {
+        border-color: $red-700;
+        background-color: $red-700;
+        color: $red-100;
+      }
     }
   }
 }
