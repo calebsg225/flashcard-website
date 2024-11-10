@@ -33,7 +33,7 @@ nav {
 nav div {
   height: 100%;
   margin: auto;
-  max-width: 55rem;
+  max-width: 65rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -59,27 +59,26 @@ nav .active-nav-button {
 }
 
 .study-interface-container {
-  max-width: 55rem;
-  margin: 2rem auto;
-  padding: 1.6rem;
+  max-width: 65rem;
+  margin: 1rem auto;
 }
 .study-interface-container .current-set-data {
   box-shadow: 0 0 15px -7px hsl(284, 8%, 27%);
   border-radius: 1.2rem;
   padding: 2rem;
-  margin-top: 3rem;
 }
 .study-interface-container .current-set-data h2 {
   margin: 0 auto 1rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 .study-interface-container .current-set-data h3 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 .study-interface-container .current-set-card-nav {
   box-shadow: 0 0 15px -7px hsl(284, 8%, 27%);
   border-radius: 1.2rem;
+  margin: 2rem auto;
 }
 .study-interface-container .current-set-card-nav .card-nav {
   width: 100%;
@@ -143,24 +142,19 @@ nav .active-nav-button {
     columns: 1;
   }
 }
-@media (min-width: 700px) {
+@media (min-width: 1000px) {
   .set-previews-container {
     columns: 2;
   }
 }
-@media (min-width: 1000px) {
+@media (min-width: 1400px) {
   .set-previews-container {
     columns: 3;
   }
 }
-@media (min-width: 1400px) {
-  .set-previews-container {
-    columns: 4;
-  }
-}
 @media (min-width: 1800px) {
   .set-previews-container {
-    columns: 5;
+    columns: 4;
   }
 }
 .edit-set-container {
@@ -222,6 +216,7 @@ nav .active-nav-button {
   font-size: 8rem;
   color: hsl(284, 8%, 27%);
   transition: background-color 0.1s, color 0.1s;
+  min-height: 255px;
 }
 .edit-set-container .input-edits-container .edit-cards-container .add-card:hover {
   background-color: hsl(287, 100%, 96%);
@@ -417,11 +412,13 @@ nav .active-nav-button {
   margin: 0;
   margin-bottom: 1rem;
   font-size: 2rem;
+  word-break: break-word;
 }
 .set-preview-container h3 {
   margin: 0;
   line-height: 2rem;
   color: hsl(287, 8%, 44%);
+  word-break: break-word;
 }
 .set-preview-container .set-preview-buttons {
   margin-top: 1rem;

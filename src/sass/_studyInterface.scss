@@ -1,26 +1,25 @@
 .study-interface-container {
   max-width: $max-total-width;
-  margin: 2rem auto;
-  padding: $pm-500;
+  margin: $pm-300 auto;
 
   .current-set-data {
     box-shadow: $box-shadow-grey;
     border-radius: $pm-400;
     padding: $pm-600;
-    margin-top: $pm-700;
     h2 {
       margin: 0 auto $pm-300;
-      font-size: $fs-300;
+      font-size: $fs-400;
     }
     h3 {
       margin: 0;
-      font-size: $fs-200;
+      font-size: $fs-250;
     }
   }
 
   .current-set-card-nav {
     box-shadow: $box-shadow-grey;
     border-radius: $pm-400;
+    margin: $pm-600 auto;
     .card-nav {
       width: 100%;
       display: grid;

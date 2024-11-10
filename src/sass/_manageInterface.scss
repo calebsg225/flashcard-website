@@ -29,28 +29,22 @@
   }
 }
 
-@include breakpoint(sm) {
+@include breakpoint(md) {
   .set-previews-container {
     columns: 2;
   }
 }
 
-@include breakpoint(md) {
-  .set-previews-container {
-    columns: 3;
-  }
-}
-
 @include breakpoint(xl) {
   .set-previews-container {
-    columns: 4;
+    columns: 3;
 
   }
 }
 
 @include breakpoint(xxl) {
   .set-previews-container {
-    columns: 5;
+    columns: 4;
 
   }
 }

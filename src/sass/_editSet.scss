@@ -58,6 +58,7 @@
         font-size: $fs-700;
         color: $grey-700;
         transition: background-color $tt-100, color $tt-100;
+        min-height: 255px;
         &:hover {
           background-color: $prim-100;
           color: $prim-600;
