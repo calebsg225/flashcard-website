@@ -164,8 +164,7 @@ nav .active-nav-button {
   position: fixed;
   inset: 0;
   z-index: 100;
-  background-color: hsla(0, 0%, 18%, 0.723);
-  height: 100vh;
+  background-color: white;
 }
 .edit-set-container .alerts-display-container {
   position: fixed;
@@ -175,37 +174,52 @@ nav .active-nav-button {
   padding: 1.6rem;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 .edit-set-container .input-edits-container .edit-cards-container {
-  border: solid 2px blue;
-  margin: 0.6rem;
-  padding: 1rem;
+  position: relative;
+  border: solid 0.2rem hsl(287, 8%, 44%);
+  border-radius: 1rem;
+  padding: 2rem;
   display: grid;
-  gap: 1rem;
+  gap: 1.6rem;
   overflow-Y: scroll;
-  max-height: 70vh;
+  max-height: calc(100vh - 400px);
 }
 .edit-set-container .input-edits-container .edit-cards-container::-webkit-scrollbar {
   display: none;
 }
 .edit-set-container .input-edits-container .edit-cards-container .add-card {
-  margin: 1rem;
-  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+  font-size: 8rem;
+  color: hsl(284, 8%, 27%);
+  transition: background-color 0.1s, color 0.1s;
+}
+.edit-set-container .input-edits-container .edit-cards-container .add-card:hover {
+  background-color: hsl(287, 100%, 96%);
+  color: hsl(286, 100%, 38%);
 }
 .edit-set-container .input-edits-container input {
+  border: solid 0.2rem hsl(287, 8%, 44%);
+  border-radius: 1rem;
+  margin-bottom: 1.2rem;
+  padding: 0.6rem;
   font-size: 1.6rem;
   font-family: inherit;
 }
 .edit-set-container .input-edits-container .confirmation-interface {
-  border: solid 1px red;
-  padding: 1.6rem;
+  pointer-events: none;
+  padding: 1rem;
   position: absolute;
   inset: auto 0 0;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 }
 .edit-set-container .input-edits-container .confirmation-interface button {
+  pointer-events: all;
   cursor: pointer;
   font-family: inherit;
   font-size: 1.5rem;
@@ -242,6 +256,7 @@ nav .active-nav-button {
 @media (min-width: 700px) {
   .edit-set-container .input-edits-container .edit-cards-container {
     grid-template-columns: repeat(2, 1fr);
+    max-height: calc(100vh - 350px);
   }
 }
 @media (min-width: 1000px) {
@@ -455,16 +470,24 @@ nav .active-nav-button {
 }
 
 .edit-card-container {
-  background-color: white;
-  padding: 1rem;
+  box-shadow: 0 0 15px -7px hsl(284, 8%, 27%);
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 1rem;
 }
 .edit-card-container textarea {
   resize: none;
   width: 100%;
+  font-size: 1.25rem;
   font-family: inherit;
+  border-radius: 0.6rem;
+  padding: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+.edit-card-container textarea::-webkit-scrollbar {
+  display: none;
 }
 
 /*# sourceMappingURL=index.css.map */

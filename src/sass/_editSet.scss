@@ -2,8 +2,7 @@
   position: fixed;
   inset: 0;
   z-index: 100;
-  background-color: hsla(0, 0%, 18%, 0.723);
-  height: 100vh;
+  background-color: white;
 
   .alerts-display-container {
     position: fixed;
@@ -14,37 +13,52 @@
     padding: $pm-500;
     display: flex;
     flex-direction: column;
+    height: 100%;
 
     .edit-cards-container {
-      border: solid 2px blue;
-      margin: $pm-200;
-      padding: $pm-300;
+      position: relative;
+      border: solid $pm-100 $grey-500;
+      border-radius: $pm-300;
+      padding: $pm-600;
       display: grid;
-      gap: $pm-300;
+      gap: $pm-500;
       overflow-Y: scroll;
-      max-height: 70vh;
+      max-height: calc(100vh - 400px);
       &::-webkit-scrollbar {
         display: none;
       }
       .add-card {
-        margin: 1rem;
-        padding: .5rem 1rem;
+        cursor: pointer;
+        border: none;
+        border-radius: $pm-300;
+        font-size: $fs-700;
+        color: $grey-700;
+        transition: background-color $tt-100, color $tt-100;
+        &:hover {
+          background-color: $prim-100;
+          color: $prim-600;
+        }
       }
     }
 
     input {
+      border: solid $pm-100 $grey-500;
+      border-radius: $pm-300;
+      margin-bottom: $pm-400;
+      padding: $pm-200;
       font-size: $pm-500;
       font-family: inherit;
     }
     .confirmation-interface {
-      border: solid 1px red;
-      padding: $pm-500;
+      pointer-events: none;
+      padding: $pm-300;
       position: absolute;
       inset: auto 0 0;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
       button {
+        pointer-events: all;
         cursor: pointer;
         font-family: inherit;
         font-size: $fs-300;
@@ -84,8 +98,6 @@
     .input-edits-container {
       .edit-cards-container {
         grid-template-columns: repeat(1, 1fr);
-        .edit-card-container {
-        }
       }
     }
   }
@@ -96,8 +108,7 @@
     .input-edits-container {
       .edit-cards-container {
         grid-template-columns: repeat(2, 1fr);
-        .edit-card-container {
-        }
+        max-height: calc(100vh - 350px);
       }
     }
   }
@@ -108,8 +119,6 @@
     .input-edits-container {
       .edit-cards-container {
         grid-template-columns: repeat(3, 1fr);
-        .edit-card-container {
-        }
       }
     }
   }
@@ -120,8 +129,6 @@
     .input-edits-container {
       .edit-cards-container {
         grid-template-columns: repeat(4, 1fr);
-        .edit-card-container {
-        }
       }
     }
   }
@@ -132,8 +139,6 @@
     .input-edits-container {
       .edit-cards-container {
         grid-template-columns: repeat(5, 1fr);
-        .edit-card-container {
-        }
       }
     }
   }

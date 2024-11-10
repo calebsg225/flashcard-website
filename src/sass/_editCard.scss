@@ -1,13 +1,21 @@
 .edit-card-container {
-  background-color: white;
-  padding: $pm-300;
+  box-shadow: $box-shadow-grey;
+  padding: $pm-500;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: $pm-300;
   textarea {
     resize: none;
     width: 100%;
+    font-size: $fs-250;
     font-family: inherit;
+    border-radius: $pm-200;
+    padding: $pm-200;
+    margin-bottom: $pm-200;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   .edit-card-term {
   }

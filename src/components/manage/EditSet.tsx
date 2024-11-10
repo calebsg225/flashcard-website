@@ -139,7 +139,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
               key={i}
             />
           ))}
-          <button onClick={() => handleAddCard()} className="add-card">Add New Card</button>
+          <button onClick={() => handleAddCard()} className="add-card">+</button>
         </div>
         <div className="confirmation-interface">
           {/* TODO: have action confirmation window here */}
