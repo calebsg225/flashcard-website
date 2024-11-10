@@ -1,6 +1,7 @@
 nav {
   height: $navbar-offset-distance;
-  background-color: $prim-900;
+  //background-color: $prim-900;
+  box-shadow: $box-shadow-grey;
 
   div {
     height: 100%;
@@ -12,20 +13,23 @@ nav {
 
     button {
       padding: .4rem 1rem;
-      color: $prim-100;
+      color: $prim-900;
+      border-radius: $pm-300;
       cursor: pointer;
       background-color: hsla(0, 0%, 100%, 0);
       font-size: $fs-400;
-      border: hsla(0, 0%, 100%, 0) solid 2px;
-      transition: color .2s, border .2s;
+      font-weight: 700;
+      border: hsla(0, 0%, 100%, 0) solid $pm-100;
+      transition: color $tt-200, border-color $tt-200;
       &:hover {
-        border-bottom: $prim-300 solid 2px;
-        color: $prim-300;
+        border: $prim-500 solid $pm-100;
+        color: $prim-500;
       }
     }
   }
 
   .active-nav-button {
-    border-bottom: $prim-100 solid 2px;
+    border: $prim-700 solid $pm-100;
+    color: $prim-700;
   }
 }

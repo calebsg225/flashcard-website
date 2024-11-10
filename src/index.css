@@ -28,7 +28,7 @@ button {
 
 nav {
   height: 5rem;
-  background-color: hsl(286, 100%, 12%);
+  box-shadow: 0 0 15px -7px hsl(284, 8%, 27%);
 }
 nav div {
   height: 100%;
@@ -40,19 +40,22 @@ nav div {
 }
 nav div button {
   padding: 0.4rem 1rem;
-  color: hsl(287, 100%, 96%);
+  color: hsl(286, 100%, 12%);
+  border-radius: 1rem;
   cursor: pointer;
   background-color: hsla(0, 0%, 100%, 0);
   font-size: 2rem;
-  border: hsla(0, 0%, 100%, 0) solid 2px;
-  transition: color 0.2s, border 0.2s;
+  font-weight: 700;
+  border: hsla(0, 0%, 100%, 0) solid 0.2rem;
+  transition: color 0.2s, border-color 0.2s;
 }
 nav div button:hover {
-  border-bottom: hsl(286, 100%, 76%) solid 2px;
-  color: hsl(286, 100%, 76%);
+  border: hsl(286, 100%, 50%) solid 0.2rem;
+  color: hsl(286, 100%, 50%);
 }
 nav .active-nav-button {
-  border-bottom: hsl(287, 100%, 96%) solid 2px;
+  border: hsl(286, 100%, 27%) solid 0.2rem;
+  color: hsl(286, 100%, 27%);
 }
 
 .study-interface-container {
