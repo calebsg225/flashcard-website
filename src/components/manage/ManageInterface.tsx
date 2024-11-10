@@ -32,7 +32,7 @@ export const ManageInterface = ({setActiveSection}: ManageInterfaceProps) => {
 
   return (
     <section className="manage-interface-container">
-      <ManageToolbar handleCreateSet={handleCreateSet} />
+      {/*<ManageToolbar handleCreateSet={handleCreateSet} />*/}
       {editing.length > 0 && <EditSet 
         editing={editing} 
         setEditing={setEditing} 

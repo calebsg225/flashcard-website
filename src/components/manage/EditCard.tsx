@@ -24,7 +24,7 @@ const EditCard = ({handleEditCard, handleRemoveCard, cardId, cardTerm, cardDefin
       <textarea
         className="edit-card-definition" 
         name="definition" 
-        placeholder="Card Description..."
+        placeholder="Card Definition..."
         onChange={(e) => handleEditCard(e, cardId)}
         defaultValue={cardDefinition} 
         data-enable-grammarly="false"

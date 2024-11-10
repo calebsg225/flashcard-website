@@ -14,6 +14,7 @@ interface EditSetProps {
 const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
 
   const [deletingCard, setDeletingCard] = useState('');
+  const [cancelEditing, setCancelEditing] = useState('');
   const [newSetData, setNewSetData] = useState<SetData>(
     setData ? setData : {
       title: "",
@@ -42,18 +43,14 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
     setEditing('');
   }
 
-  const handleOnCancelEdits = () => {
-    setEditing('');
-  }
-
-  const handleChangeSetData = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleOnChangeSetData = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewSetData({
       ...newSetData,
       [e.target.name]: e.target.value
     })
   }
 
-  const handleAddCard = () => {
+  const handleOnAddCard = () => {
     setNewSetData({
       ...newSetData,
       cards: {
@@ -66,7 +63,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
     })
   }
 
-  const handleEditCard = (e: React.ChangeEvent<HTMLTextAreaElement>, cardId: string) => {
+  const handleOnEditCard = (e: React.ChangeEvent<HTMLTextAreaElement>, cardId: string) => {
     // too much data changing?
     setNewSetData({
       ...newSetData,
@@ -80,11 +77,16 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
     })
   }
 
-  const handleCancelRemoveCard = () => {
+  // functions for removing a card
+  const handleOnRemoveCard = (cardId: string) => {
+    setDeletingCard(cardId);
+  }
+
+  const handleOnCancelRemoveCard = () => {
     setDeletingCard("");
   }
 
-  const handleConfirmRemoveCard = () => {
+  const handleOnConfirmRemoveCard = () => {
     const newCardsData = newSetData.cards;
     delete newCardsData[deletingCard];
     setNewSetData({
@@ -94,8 +96,18 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
     setDeletingCard("");
   }
 
-  const handleRemoveCard = (cardId: string) => {
-    setDeletingCard(cardId);
+  // functions for canceling edits
+  const handleOnCancelEdits = () => {
+    setCancelEditing('canceling');
+  }
+
+  const handleOnCancelCancelEditing = () => {
+    setCancelEditing('');
+  }
+
+  const handleOnConfirmCancelEditing = () => {
+    setCancelEditing('');
+    setEditing('');
   }
 
   return (
@@ -105,8 +117,16 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
         title="Remove Card" 
         message="This action is irreversible." 
         confirmName="remove" 
-        cancelFunction={handleCancelRemoveCard} 
-        confirmFunction={handleConfirmRemoveCard} 
+        cancelFunction={handleOnCancelRemoveCard} 
+        confirmFunction={handleOnConfirmRemoveCard} 
+      />}
+      {/* action confirmation popup, used to confirm exiting editing mode */}
+      {cancelEditing.length > 0 && <ActionConfirmation 
+        title={"Exit Editing"} 
+        message={"Are you sure you want to exit? Your changes will not be saved."} 
+        confirmName={"Exit"} 
+        cancelFunction={handleOnCancelCancelEditing} 
+        confirmFunction={handleOnConfirmCancelEditing} 
       />}
       {/* main editor */}
       <div className="input-edits-container">
@@ -115,7 +135,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
             name="title" 
             placeholder="Set Title..." 
             maxLength={100}
-            onChange={(e) => handleChangeSetData(e)} 
+            onChange={(e) => handleOnChangeSetData(e)} 
             type="text" 
             defaultValue={newSetData.title}
             spellCheck="false"
@@ -127,7 +147,7 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
             name="description" 
             placeholder="Set Description..." 
             maxLength={300}
-            onChange={(e) => handleChangeSetData(e)} 
+            onChange={(e) => handleOnChangeSetData(e)} 
             type="text" 
             defaultValue={newSetData.description}
             spellCheck="false"
@@ -137,19 +157,18 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
         <div className="edit-cards-container">
           {Object.keys(newSetData.cards).map((cardId, i) => (
             <EditCard
-              handleEditCard={handleEditCard} 
-              handleRemoveCard={handleRemoveCard} 
+              handleEditCard={handleOnEditCard} 
+              handleRemoveCard={handleOnRemoveCard} 
               cardId={cardId}
               cardTerm={newSetData.cards[cardId].term}
               cardDefinition={newSetData.cards[cardId].definition} 
               key={i}
             />
           ))}
-          <button onClick={() => handleAddCard()} className="add-card">+</button>
+          <button onClick={() => handleOnAddCard()} className="add-card">+</button>
         </div>
         <div className="confirmation-interface">
-          {/* TODO: have action confirmation window here */}
-          <button className="cancel-button" onClick={() => {handleOnCancelEdits()}}>Cancel</button>
+          <button className="cancel-edits-button" onClick={() => {handleOnCancelEdits()}}>Exit</button>
           <button className="save-button" onClick={() => {handleOnSaveEdits()}}>Save</button>
         </div>
       </div>

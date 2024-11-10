@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   background-color: hsla(0, 0%, 37%, 0.334);
-  z-index: 1000;
+  z-index: 10000;
 
   .action-confirmation-interface {
     width: min(30rem, 85%);
@@ -24,7 +24,7 @@
       margin: 0;
       padding: $pm-300;
       font-weight: 600;
-      font-size: $fs-200;
+      font-size: $fs-250;
       color: $grey-500;
     }
     div {

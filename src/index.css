@@ -247,12 +247,12 @@ nav .active-nav-button {
   margin: auto 1.6rem;
   transition: background-color 0.1s, color 0.1s;
 }
-.edit-set-container .input-edits-container .confirmation-interface .cancel-button {
+.edit-set-container .input-edits-container .confirmation-interface .cancel-edits-button {
   color: hsl(0, 100%, 34%);
   border: solid 0.2rem hsl(0, 100%, 34%);
   background-color: hsl(0, 100%, 92%);
 }
-.edit-set-container .input-edits-container .confirmation-interface .cancel-button:hover {
+.edit-set-container .input-edits-container .confirmation-interface .cancel-edits-button:hover {
   color: hsl(0, 100%, 92%);
   background-color: hsl(0, 100%, 34%);
 }
@@ -340,7 +340,7 @@ nav .active-nav-button {
   justify-content: center;
   align-items: center;
   background-color: hsla(0, 0%, 37%, 0.334);
-  z-index: 1000;
+  z-index: 10000;
 }
 .action-confirmation .action-confirmation-interface {
   width: min(30rem, 85%);
@@ -360,7 +360,7 @@ nav .active-nav-button {
   margin: 0;
   padding: 1rem;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: hsl(287, 8%, 44%);
 }
 .action-confirmation .action-confirmation-interface div {
