@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   z-index: 100;
-  background-color: black;
+  background-color: hsla(0, 0%, 18%, 0.723);
   height: 100vh;
 
   .alerts-display-container {
@@ -11,15 +11,18 @@
   }
 
   .input-edits-container {
-    padding: 3rem;
+    padding: $pm-500;
     display: flex;
     flex-direction: column;
 
     .edit-cards-container {
-      padding: $pm-400 0;
+      border: solid 2px blue;
+      margin: $pm-200;
+      padding: $pm-300;
       display: grid;
       gap: $pm-300;
       overflow-Y: scroll;
+      max-height: 70vh;
       &::-webkit-scrollbar {
         display: none;
       }
@@ -35,7 +38,7 @@
     }
     .confirmation-interface {
       border: solid 1px red;
-      padding: $pm-700;
+      padding: $pm-500;
       position: absolute;
       inset: auto 0 0;
       display: flex;
@@ -48,7 +51,7 @@
         font-weight: 700;
         border-radius: $pm-200;
         padding: $pm-200 $pm-400;
-        margin-left: $pm-700;
+        margin: auto $pm-500;
         transition: background-color $tt-100, color $tt-100;
       }
 
