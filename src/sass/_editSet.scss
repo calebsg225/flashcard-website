@@ -15,6 +15,29 @@
     flex-direction: column;
     height: 100%;
 
+    .input-container {
+      position: relative;
+      margin-bottom: $pm-400;
+      input {
+        width: calc(100% - calc($pm-200 * 2) - calc($pm-100 * 2)); // probably a better way to do this...
+        border: solid $pm-100 $grey-500;
+        border-radius: $pm-300;
+        padding: $pm-200;
+        font-size: $pm-500;
+        font-family: inherit;
+        outline-color: $prim-500;
+      }
+      p {
+        position: absolute;
+        inset: 50% 0 0 auto;
+        margin: 0 $pm-500;
+        font-size: $fs-250;
+        transform: translateY(-50%);
+        color: $red-200;
+        font-weight: 700;
+      }
+    }
+
     .edit-cards-container {
       position: relative;
       border: solid $pm-100 $grey-500;
@@ -43,16 +66,6 @@
       &:hover {
         border-color: $prim-500;
       }
-    }
-
-    input {
-      border: solid $pm-100 $grey-500;
-      border-radius: $pm-300;
-      margin-bottom: $pm-400;
-      padding: $pm-200;
-      font-size: $pm-500;
-      font-family: inherit;
-      outline-color: $prim-500;
     }
 
     .confirmation-interface {

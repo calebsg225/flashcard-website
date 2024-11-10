@@ -110,26 +110,30 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
       />}
       {/* main editor */}
       <div className="input-edits-container">
-        <input 
-          className="edit-title" 
-          name="title" 
-          placeholder="Set Title..." 
-          maxLength={100}
-          onChange={(e) => handleChangeSetData(e)} 
-          type="text" 
-          defaultValue={newSetData.title}
-          spellCheck="false"
-        />
-        <input 
-          className="edit-description" 
-          name="description" 
-          placeholder="Set Description..." 
-          maxLength={300}
-          onChange={(e) => handleChangeSetData(e)} 
-          type="text" 
-          defaultValue={newSetData.description}
-          spellCheck="false"
-        />
+        <div className="input-container edit-title">
+          <input  
+            name="title" 
+            placeholder="Set Title..." 
+            maxLength={100}
+            onChange={(e) => handleChangeSetData(e)} 
+            type="text" 
+            defaultValue={newSetData.title}
+            spellCheck="false"
+          />
+          {newSetData.title.length === 0 && <p>* A title is required.</p>}
+        </div>
+        <div className="input-container edit-description">
+          <input  
+            name="description" 
+            placeholder="Set Description..." 
+            maxLength={300}
+            onChange={(e) => handleChangeSetData(e)} 
+            type="text" 
+            defaultValue={newSetData.description}
+            spellCheck="false"
+          />
+          {newSetData.description.length === 0 && <p>* A description is required.</p>}
+        </div>
         <div className="edit-cards-container">
           {Object.keys(newSetData.cards).map((cardId, i) => (
             <EditCard
