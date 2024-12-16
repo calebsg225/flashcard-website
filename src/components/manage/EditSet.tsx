@@ -155,17 +155,19 @@ const EditSet = ({editing, setEditing, setData}: EditSetProps) => {
           {newSetData.description.length === 0 && <p>* A description is required.</p>}
         </div>
         <div className="edit-cards-container">
-          {Object.keys(newSetData.cards).map((cardId, i) => (
-            <EditCard
+          <div className="blur-effect">
+            {Object.keys(newSetData.cards).map((cardId, i) => (
+              <EditCard
               handleEditCard={handleOnEditCard} 
               handleRemoveCard={handleOnRemoveCard} 
               cardId={cardId}
               cardTerm={newSetData.cards[cardId].term}
               cardDefinition={newSetData.cards[cardId].definition} 
               key={i}
-            />
-          ))}
-          <button onClick={() => handleOnAddCard()} className="add-card">+</button>
+              />
+            ))}
+            <button onClick={() => handleOnAddCard()} className="add-card">+</button>
+          </div>
         </div>
         <div className="confirmation-interface">
           <button className="cancel-edits-button" onClick={() => {handleOnCancelEdits()}}>Exit</button>

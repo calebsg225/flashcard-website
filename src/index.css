@@ -197,19 +197,23 @@ nav .active-nav-button {
 }
 .edit-set-container .input-edits-container .edit-cards-container {
   position: relative;
-  border: solid 0.2rem hsl(287, 8%, 44%);
   border-radius: 1rem;
+  max-height: calc(100vh - 400px);
+  transition: border-color 0.1s;
+  overflow: hidden;
+}
+.edit-set-container .input-edits-container .edit-cards-container .blur-effect {
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
   padding: 2rem;
   display: grid;
   gap: 1.6rem;
   overflow-Y: scroll;
-  max-height: calc(100vh - 400px);
-  transition: border-color 0.1s;
 }
-.edit-set-container .input-edits-container .edit-cards-container::-webkit-scrollbar {
+.edit-set-container .input-edits-container .edit-cards-container .blur-effect::-webkit-scrollbar {
   display: none;
 }
-.edit-set-container .input-edits-container .edit-cards-container .add-card {
+.edit-set-container .input-edits-container .edit-cards-container .blur-effect .add-card {
   cursor: pointer;
   border: none;
   border-radius: 1rem;
@@ -218,12 +222,22 @@ nav .active-nav-button {
   transition: background-color 0.1s, color 0.1s;
   min-height: 255px;
 }
-.edit-set-container .input-edits-container .edit-cards-container .add-card:hover {
+.edit-set-container .input-edits-container .edit-cards-container .blur-effect .add-card:hover {
   background-color: hsl(287, 100%, 96%);
   color: hsl(286, 100%, 38%);
 }
-.edit-set-container .input-edits-container .edit-cards-container:hover {
-  border-color: hsl(286, 100%, 50%);
+.edit-set-container .input-edits-container .edit-cards-container::before {
+  position: absolute;
+  inset: -0.6rem;
+  border: solid 0.2rem;
+  border-image: linear-gradient(black, black) 10;
+  filter: blur(0.6rem);
+  content: "";
+  pointer-events: none;
+  transition: border-image 0.1s;
+}
+.edit-set-container .input-edits-container .edit-cards-container:hover::before {
+  border-image: linear-gradient(hsl(286, 100%, 50%), hsl(286, 100%, 50%)) 10;
 }
 .edit-set-container .input-edits-container .confirmation-interface {
   pointer-events: none;
@@ -270,23 +284,23 @@ nav .active-nav-button {
   }
 }
 @media (min-width: 700px) {
-  .edit-set-container .input-edits-container .edit-cards-container {
+  .edit-set-container .input-edits-container .edit-cards-container .blur-effect {
     grid-template-columns: repeat(2, 1fr);
     max-height: calc(100vh - 350px);
   }
 }
 @media (min-width: 1000px) {
-  .edit-set-container .input-edits-container .edit-cards-container {
+  .edit-set-container .input-edits-container .edit-cards-container .blur-effect {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 1400px) {
-  .edit-set-container .input-edits-container .edit-cards-container {
+  .edit-set-container .input-edits-container .edit-cards-container .blur-effect {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 @media (min-width: 1800px) {
-  .edit-set-container .input-edits-container .edit-cards-container {
+  .edit-set-container .input-edits-container .edit-cards-container .blur-effect {
     grid-template-columns: repeat(5, 1fr);
   }
 }

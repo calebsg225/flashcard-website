@@ -40,32 +40,46 @@
 
     .edit-cards-container {
       position: relative;
-      border: solid $pm-100 $grey-500;
       border-radius: $pm-300;
-      padding: $pm-600;
-      display: grid;
-      gap: $pm-500;
-      overflow-Y: scroll;
       max-height: calc(100vh - 400px);
       transition: border-color $tt-100;
-      &::-webkit-scrollbar {
-        display: none;
-      }
-      .add-card {
-        cursor: pointer;
-        border: none;
-        border-radius: $pm-300;
-        font-size: $fs-700;
-        color: $grey-700;
-        transition: background-color $tt-100, color $tt-100;
-        min-height: 255px;
-        &:hover {
-          background-color: $prim-100;
-          color: $prim-600;
+      overflow: hidden;
+      .blur-effect {
+        width: calc(100% - $pm-600*2);
+        height: calc(100% - $pm-600*2);
+        padding: $pm-600;
+        display: grid;
+        gap: $pm-500;
+        overflow-Y: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        .add-card {
+          cursor: pointer;
+          border: none;
+          border-radius: $pm-300;
+          font-size: $fs-700;
+          color: $grey-700;
+          transition: background-color $tt-100, color $tt-100;
+          min-height: 255px;
+          &:hover {
+            background-color: $prim-100;
+            color: $prim-600;
+          }
         }
       }
-      &:hover {
-        border-color: $prim-500;
+      &::before {
+        position: absolute;
+        inset: -$pm-200;
+        border: solid $pm-100;
+        border-image: linear-gradient(black, black) 10;
+        filter: blur($pm-200);
+        content: '';
+        pointer-events: none;
+        transition: border-image $tt-100;
+      }
+      &:hover::before {
+        border-image: linear-gradient($prim-500, $prim-500) 10;
       }
     }
 
@@ -127,8 +141,10 @@
   .edit-set-container {
     .input-edits-container {
       .edit-cards-container {
-        grid-template-columns: repeat(2, 1fr);
-        max-height: calc(100vh - 350px);
+        .blur-effect {
+          grid-template-columns: repeat(2, 1fr);
+          max-height: calc(100vh - 350px);
+        }
       }
     }
   }
@@ -138,7 +154,9 @@
   .edit-set-container {
     .input-edits-container {
       .edit-cards-container {
-        grid-template-columns: repeat(3, 1fr);
+        .blur-effect {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
     }
   }
@@ -148,7 +166,9 @@
   .edit-set-container {
     .input-edits-container {
       .edit-cards-container {
-        grid-template-columns: repeat(4, 1fr);
+        .blur-effect {
+          grid-template-columns: repeat(4, 1fr);
+        }
       }
     }
   }
@@ -158,7 +178,9 @@
   .edit-set-container {
     .input-edits-container {
       .edit-cards-container {
-        grid-template-columns: repeat(5, 1fr);
+        .blur-effect {
+          grid-template-columns: repeat(5, 1fr);
+        }
       }
     }
   }
